@@ -6,7 +6,7 @@
     Uses a valid access token to GET the list of dashboard updates from /{dataViewName}/Dashboards/{dashboardId}/Updates.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/Holidays/OrbitAPI
+    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
  
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"
@@ -19,7 +19,7 @@
 
 .EXAMPLE
     .\ListDashboardUpdates.ps1 `
-        -BaseUrl "https://example.com/Holidays/OrbitAPI" `
+        -BaseUrl "https://example.com/holidays/OrbitAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `
         -DashboardId 1234

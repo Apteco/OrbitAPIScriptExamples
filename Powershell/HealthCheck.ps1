@@ -6,13 +6,13 @@
     Uses a valid access token to POST a JSON file to /{dataViewName}/Themes.
  
 .PARAMETER OrbitBaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/Holidays/OrbitAPI
+    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
 
 .PARAMETER ConnectBaseUrl
-    The base URL of the Connect API, e.g. https://example.com/Holidays/OrbitConnectAPI.  Can be omitted if ConnectAPI checks are not required.
+    The base URL of the Connect API, e.g. https://example.com/holidays/OrbitConnectAPI.  Can be omitted if ConnectAPI checks are not required.
 
 .PARAMETER ChatBaseUrl
-    The base URL of the Chat API, e.g. https://example.com/Holidays/ChatAPI.  Can be omitted if ChatAPI checks are not required.
+    The base URL of the Chat API, e.g. https://example.com/holidays/ChatAPI.  Can be omitted if ChatAPI checks are not required.
 
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"

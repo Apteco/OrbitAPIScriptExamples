@@ -30,7 +30,7 @@
     are left unchanged on the variable.
 
 .PARAMETER BaseUrl
-    The base URL of the Connect API, e.g. https://example.com/Holidays/ConnectAPI
+    The base URL of the Connect API, e.g. https://example.com/holidays/ConnectAPI
 
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"
@@ -43,7 +43,7 @@
 
 .EXAMPLE
     .\UpdateTableDefinitionVariables.ps1 `
-        -BaseUrl "https://example.com/Holidays/ConnectAPI" `
+        -BaseUrl "https://example.com/holidays/ConnectAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `
         -SpecFile ".\table-definition-updates-spec.json"

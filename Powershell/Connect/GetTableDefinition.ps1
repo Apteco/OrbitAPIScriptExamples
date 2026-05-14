@@ -7,7 +7,7 @@
     Requires the OrbitAdmin role.
 
 .PARAMETER BaseUrl
-    The base URL of the Connect API, e.g. https://example.com/Holidays/ConnectAPI
+    The base URL of the Connect API, e.g. https://example.com/holidays/ConnectAPI
 
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"
@@ -20,7 +20,7 @@
 
 .EXAMPLE
     .\GetTableDefinition.ps1 `
-        -BaseUrl "https://example.com/Holidays/ConnectAPI" `
+        -BaseUrl "https://example.com/holidays/ConnectAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `
         -TableDefinitionId 1234
