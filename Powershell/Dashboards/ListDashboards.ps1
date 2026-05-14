@@ -126,8 +126,8 @@ do
     }
 
     $offset += $pageSize
-    $totalCount += $dashboardResponse.count
+    $totalCount += $dashboardResponse.list.Count
 }
-while ($dashboardResponse.count -gt 0)
+while ($dashboardResponse.list.Count -gt 0)
 
 Write-Host "Got $totalCount dashboards" -ForegroundColor Green

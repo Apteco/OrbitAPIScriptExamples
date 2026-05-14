@@ -72,4 +72,4 @@ foreach ($theme in $themeResponse) {
     Write-Output "$($theme.id): $($theme.name)$isDefault"
 }
 
-Write-Host "Got $($themeResponse.Count) dashboard themes" -ForegroundColor Green
+Write-Host "Got $($themeResponse.list.Count) dashboard themes" -ForegroundColor Green
