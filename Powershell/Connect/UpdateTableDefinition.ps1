@@ -6,7 +6,7 @@
     Uses a valid access token to POST a JSON file to /{dataViewName}/TableDefinitions/{tableDefinitionId}/Updates.
  
 .PARAMETER BaseUrl
-    The base URL of the Connect API, e.g. https://cloudtest.faststats.co.uk/Develop/ConnectAPI
+    The base URL of the Connect API, e.g. https://example.com/Holidays/ConnectAPI
  
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"
@@ -22,7 +22,7 @@
 
 .EXAMPLE
     .\UpdateTableDefinition.ps1 `
-        -BaseUrl "https://cloudtest.faststats.co.uk/Develop/ConnectAPI" `
+        -BaseUrl "https://example.com/Holidays/ConnectAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `
         -TableDefinitionId 12345 `

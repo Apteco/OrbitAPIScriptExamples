@@ -6,7 +6,7 @@
     1. Calls POST /{dataViewName}/Sessions/SimpleLogin to obtain an access token.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://cloudtest.faststats.co.uk/Develop/OrbitAPI
+    The base URL of the Orbit API, e.g. https://example.com/Holidays/OrbitAPI
  
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"

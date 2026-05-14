@@ -6,7 +6,7 @@
     Uses a valid access token to POST a JSON file to /{dataViewName}/Dashboards/{dashboardId}/Updates.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://cloudtest.faststats.co.uk/Develop/OrbitAPI
+    The base URL of the Orbit API, e.g. https://example.com/Holidays/OrbitAPI
  
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"
@@ -22,7 +22,7 @@
  
 .EXAMPLE
     .\UpdateDashboard.ps1 `
-        -BaseUrl "https://cloudtest.faststats.co.uk/Develop/OrbitAPI" `
+        -BaseUrl "https://example.com/Holidays/OrbitAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `
         -DashboardId 1234 `

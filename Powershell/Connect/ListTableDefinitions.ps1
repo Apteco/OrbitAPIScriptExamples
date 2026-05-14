@@ -7,7 +7,7 @@
     Requires the OrbitAdmin role.
 
 .PARAMETER BaseUrl
-    The base URL of the Connect API, e.g. https://cloudtest.faststats.co.uk/Develop/ConnectAPI
+    The base URL of the Connect API, e.g. https://example.com/Holidays/ConnectAPI
 
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"
@@ -17,7 +17,7 @@
 
 .EXAMPLE
     .\ListTableDefinitions.ps1 `
-        -BaseUrl "https://cloudtest.faststats.co.uk/Develop/ConnectAPI" `
+        -BaseUrl "https://example.com/Holidays/ConnectAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here"
 #>

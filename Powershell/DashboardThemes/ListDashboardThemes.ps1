@@ -6,7 +6,7 @@
     Uses a valid access token to GET the list of dashboard themes from /{dataViewName}/Themes.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://cloudtest.faststats.co.uk/Develop/OrbitAPI
+    The base URL of the Orbit API, e.g. https://example.com/Holidays/OrbitAPI
  
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"
@@ -16,7 +16,7 @@
  
 .EXAMPLE
     .\ListDashboardThemes.ps1 `
-        -BaseUrl "https://cloudtest.faststats.co.uk/Develop/OrbitAPI" `
+        -BaseUrl "https://example.com/Holidays/OrbitAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here"
 #>
