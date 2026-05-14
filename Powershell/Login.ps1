@@ -51,7 +51,10 @@ function Stop-WithError {
 $loginUrl = "$BaseUrl/$DataViewName/Sessions/SimpleLogin"
 
 if ([string]::IsNullOrEmpty($Password)) {
-    $Password = (Read-Host -AsSecureString "Enter password") | ConvertFrom-SecureString -AsPlainText
+    $securePassword = Read-Host -AsSecureString "Enter password"
+    $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)
+    $Password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr)
+    [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($bstr)
 }
 
 $loginBody = "UserLogin=$Username&Password=$Password"
