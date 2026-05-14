@@ -21,6 +21,12 @@ Getting dashboards for user administrator...
 Got 3 dashboards
 ```
 
+## Example usage
+
+There are some simple single-step scripts that perform a simple action (in one or two API calls), and other scripts that perform more complex tasks in multiple steps.
+
+For examples of how some of the simple scripts could be combined to perform more complex actions, see [docs/script-cookbook.md](docs/script-cookbook.md).
+
 ## Disclaimer
 
 > [!WARNING]
