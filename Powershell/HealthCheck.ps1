@@ -3,7 +3,9 @@
     Performs a few checks against the OrbitAPI, ConnectAPI and ChatAPI to check that they are healthy
  
 .DESCRIPTION
-    Uses a valid access token to POST a JSON file to /{dataViewName}/Themes.
+    Performs a series of connectivity checks against the Orbit API and, optionally, the Connect
+    and Chat APIs.  Each check targets a specific endpoint to verify that the service is running
+    and that it can reach its own dependencies (databases, FastStats services, Apteco AI proxy).
  
 .PARAMETER OrbitBaseUrl
     The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
@@ -162,7 +164,7 @@ Write-Host "✅ Orbit API user details check successful (found user '$username' 
 Write-Host "   - Orbit API can connect to Orbit database" -ForegroundColor Green
 
 # ---------------------------------------------------------------------------
-# Check FastStats Systems in DataView (verifies Orbit API can talk to databse and FS Service)
+# Check FastStats Systems in DataView (verifies Orbit API can talk to database and FS Service)
 # ---------------------------------------------------------------------------
 $orbitApiSystemsUrl = "$OrbitBaseUrl/$DataViewName/FastStatsSystems"
  
@@ -186,12 +188,13 @@ catch {
     Stop-WithError "Orbit API FastStats systems check failed (HTTP $statusCode). Response: $errorBody`nError: $_"
 }
  
-Write-Host "✅ Orbit API FastStats systems check successful (found $($systemsResponse.list.Count) systems)." -ForegroundColor Green
+$systems = @($systemsResponse.list)
+Write-Host "✅ Orbit API FastStats systems check successful (found $($systems.Count) systems)." -ForegroundColor Green
 Write-Host "   - Orbit API can connect to Job Queue database and FastStats Services responding" -ForegroundColor Green
 $systemName = ""
-if ($systemsResponse.list.Count -gt 0) {
-  $systemName = $systemsResponse.list[0].name
-  Write-Host "  First FastStats system: $($systemsResponse.list[0].name) (view name $($systemsResponse.list[0].viewName)) built on $($systemsResponse.list[0].fastStatsBuildDate)" -ForegroundColor Green
+if ($systems.Count -gt 0) {
+  $systemName = $systems[0].name
+  Write-Host "  First FastStats system: $($systems[0].name) (view name $($systems[0].viewName)) built on $($systems[0].fastStatsBuildDate)" -ForegroundColor Green
 }
 
 if ($ConnectBaseUrl) {

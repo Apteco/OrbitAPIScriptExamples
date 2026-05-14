@@ -121,13 +121,14 @@ do
         Stop-WithError "Dashboard GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
     }
 
-    foreach ($dashboard in $dashboardResponse.list) {
+    $page = @($dashboardResponse.list)
+    foreach ($dashboard in $page) {
         Write-Output "$($dashboard.id): $($dashboard.title)"
     }
 
     $offset += $pageSize
-    $totalCount += $dashboardResponse.list.Count
+    $totalCount += $page.Count
 }
-while ($dashboardResponse.list.Count -gt 0)
+while ($page.Count -gt 0)
 
 Write-Host "Got $totalCount dashboards" -ForegroundColor Green

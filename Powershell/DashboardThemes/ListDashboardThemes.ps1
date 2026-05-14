@@ -67,9 +67,10 @@ catch {
     Stop-WithError "Dashboard GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
 }
 
-foreach ($theme in $themeResponse) {
+$themes = @($themeResponse)
+foreach ($theme in $themes) {
     $isDefault = if ($theme.default) { " [DEFAULT]" } else { "" }
     Write-Output "$($theme.id): $($theme.name)$isDefault"
 }
 
-Write-Host "Got $($themeResponse.list.Count) dashboard themes" -ForegroundColor Green
+Write-Host "Got $($themes.Count) dashboard themes" -ForegroundColor Green

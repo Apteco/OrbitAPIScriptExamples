@@ -82,6 +82,6 @@ catch {
     Stop-WithError "Dashboard Update GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
 }
 
-Write-Output $dashboardUpdateResponse | ConvertTo-Json -Depth 100
+$dashboardUpdateResponse | ConvertTo-Json -Depth 100
 
 Write-Host "Got dashboard update $($dashboardUpdateResponse.id) for dashboard $($DashboardId): $($dashboardUpdateResponse.title)" -ForegroundColor Green

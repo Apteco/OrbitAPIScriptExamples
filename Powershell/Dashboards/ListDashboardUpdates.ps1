@@ -79,13 +79,14 @@ do
         Stop-WithError "Dashboard Updates GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
     }
 
-    foreach ($dashboardUpdate in $dashboardUpdatesResponse.list) {
+    $page = @($dashboardUpdatesResponse.list)
+    foreach ($dashboardUpdate in $page) {
         Write-Output "$($dashboardUpdate.timestamp) (update $($dashboardUpdate.id)): Dashboard '$($dashboardUpdate.title)' updated by $($dashboardUpdate.user.username)"
     }
 
     $offset += $pageSize
-    $totalCount += $dashboardUpdatesResponse.list.Count
+    $totalCount += $page.Count
 }
-while ($dashboardUpdatesResponse.list.Count -gt 0)
+while ($page.Count -gt 0)
 
 Write-Host "Got $totalCount dashboard updates" -ForegroundColor Green

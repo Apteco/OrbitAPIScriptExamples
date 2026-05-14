@@ -83,4 +83,4 @@ catch {
     Stop-WithError "Dashboard POST failed (HTTP $statusCode). Response: $errorBody`nError: $_"
 }
 
-Write-Host "Dashboard $($dashboardResponse.title) created successfully with $($dashboardResponse.workbookItems.length) tabs!" -ForegroundColor Green
+Write-Host "Dashboard $($dashboardResponse.title) created successfully with $(@($dashboardResponse.workbookItems).Count) tabs!" -ForegroundColor Green

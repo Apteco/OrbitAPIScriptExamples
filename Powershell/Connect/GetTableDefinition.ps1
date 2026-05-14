@@ -72,10 +72,10 @@ try {
 catch {
     $statusCode = if ($_.Exception.Response) { $_.Exception.Response.StatusCode.value__ } else { $null }
     $errorBody  = if ($_.ErrorDetails) { $_.ErrorDetails.Message } else { $null }
-    Stop-WithError "TableDefinitions GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
+    Stop-WithError "TableDefinition $TableDefinitionId GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
 }
 
-Write-Output $tableDefinitionResponse | ConvertTo-Json -Depth 100
+$tableDefinitionResponse | ConvertTo-Json -Depth 100
 
 Write-Host "Got table definition $($tableDefinitionResponse.id): $($tableDefinitionResponse.title)" -ForegroundColor Green
 

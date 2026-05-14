@@ -91,7 +91,7 @@ catch {
     Stop-WithError "Dashboard Updates GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
 }
 
-$recentUpdates = $updatesResponse.list
+$recentUpdates = @($updatesResponse.list)
 
 if ($recentUpdates.Count -eq 0) {
     Write-Host "No updates found for dashboard $DashboardId." -ForegroundColor Yellow

@@ -124,10 +124,11 @@ do {
         Stop-WithError "TableDefinitions GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
     }
 
-    $allSummaries += $listResponse.list
+    $page = @($listResponse.list)
+    $allSummaries += $page
     $offset += $pageSize
 }
-while ($listResponse.list.Count -gt 0)
+while ($page.Count -gt 0)
 
 Write-Host "Found $($allSummaries.Count) table definition(s)." -ForegroundColor Cyan
 
@@ -199,7 +200,7 @@ foreach ($detail in $allDetails) {
         schema = $detail.schema
     }
 
-    $referenceVariables = $variables | Where-Object { $_.type -eq "Reference" }
+    $referenceVariables = @($variables | Where-Object { $_.type -eq "Reference" })
     if ($referenceVariables.Count -eq 1) {
         $updateBody.hasReferenceVariable = $true
         $updateBody.referenceVariableId = $referenceVariables[0].id

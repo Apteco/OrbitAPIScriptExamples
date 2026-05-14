@@ -75,13 +75,14 @@ do {
         Stop-WithError "TableDefinitions GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
     }
 
-    foreach ($item in $response.list) {
+    $page = @($response.list)
+    foreach ($item in $page) {
         Write-Output "$($item.id): $($item.title)"
     }
 
     $offset    += $pageSize
-    $totalCount += $response.list.Count
+    $totalCount += $page.Count
 }
-while ($response.list.Count -gt 0)
+while ($page.Count -gt 0)
 
 Write-Host "Got $totalCount table definitions" -ForegroundColor Green

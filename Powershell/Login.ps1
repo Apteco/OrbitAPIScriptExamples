@@ -57,7 +57,7 @@ if ([string]::IsNullOrEmpty($Password)) {
     [System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($bstr)
 }
 
-$loginBody = "UserLogin=$Username&Password=$Password"
+$loginBody = "UserLogin=$([Uri]::EscapeDataString($Username))&Password=$([Uri]::EscapeDataString($Password))"
  
 Write-Host "Authenticating as '$Username' against '$loginUrl'..." -ForegroundColor Cyan
  

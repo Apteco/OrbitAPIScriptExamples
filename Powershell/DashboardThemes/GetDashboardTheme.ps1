@@ -74,6 +74,6 @@ catch {
     Stop-WithError "Dashboard GET failed (HTTP $statusCode). Response: $errorBody`nError: $_"
 }
 
-Write-Output $themeResponse | ConvertTo-Json -Depth 10
+$themeResponse | ConvertTo-Json -Depth 10
 
 Write-Host "Got dashboard theme $($themeResponse.id): $($themeResponse.name)" -ForegroundColor Green
