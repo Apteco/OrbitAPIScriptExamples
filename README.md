@@ -1,4 +1,4 @@
-# OrbitAPIScriptExamples
+# Orbit API Script Examples
 A library of scripting examples to show some of the things that can be done with the Orbit API.
 
 These scripts could be useful for automating administrative tasks within the Orbit platform.
@@ -56,6 +56,7 @@ Simple single-step scripts
 |--------|----------|
 | [ListDashboards.ps1](Powershell/Dashboards/ListDashboards.ps1) | Lists all dashboards in a DataView that are owned by the authenticated user. |
 | [ListAllDashboards.ps1](Powershell/Dashboards/ListAllDashboards.ps1) | Lists all dashboards in a DataView across all users (requires admin access). |
+| [GetDashboard.ps1](Powershell/Dashboards/GetDashboard.ps1) | Retrieves details of a specific dashboard as JSON, although not full details of the items in the dashboard.  These can be looked up with the  `lastUpdateId` in combination with the `GetDashboardUpdate.ps1` script. |
 | [CreateDashboard.ps1](Powershell/Dashboards/CreateDashboard.ps1) | Creates a new dashboard by posting a JSON definition file to the API. |
 | [UpdateDashboard.ps1](Powershell/Dashboards/UpdateDashboard.ps1) | Updates an existing dashboard by posting a JSON definition file to the dashboard's Updates endpoint. |
 | [ListDashboardUpdates.ps1](Powershell/Dashboards/ListDashboardUpdates.ps1) | Lists the full update history for a specific dashboard. |
