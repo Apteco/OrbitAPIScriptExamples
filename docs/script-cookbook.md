@@ -1,6 +1,9 @@
 # Script Cookbook
 
-A collection of examples showing how the individual scripts can be combined into larger workflows.
+Here are some examples showing how the individual scripts can be combined into larger workflows.
+
+- Modify all dashboards for a user — replace a string in every dashboard definition
+- Set the theme for a specific dashboard
 
 ---
 
