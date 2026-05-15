@@ -1,7 +1,15 @@
 # Orbit API Script Examples
 A library of scripting examples to show some of the things that can be done with the Orbit API.
 
-These scripts could be useful for automating administrative tasks within the Orbit platform.
+These scripts could be useful for automating administrative tasks within the Orbit platform.  For example:
+
+- 🧑‍🎨 Change the theme on one or more dashboards 
+- ⬅️ Revert back to a previous save on one or more dashboards
+- ✏️ Programatically modify one or more dashboards
+- 👤 Transfer the ownership of one or more dashboards
+- ...
+
+All of these things can be done via the Orbit API, but by automating things these tasks can be done more quickly/consistently.
 
 ## Prerequisites
 
@@ -21,7 +29,7 @@ Getting dashboards for user administrator...
 Got 3 dashboards
 ```
 
-## Example usage
+## Further example usage
 
 There are some simple single-step scripts that perform a simple action (in one or two API calls), and other scripts that perform more complex tasks in multiple steps.
 
@@ -67,6 +75,8 @@ Simple single-step scripts
 | [UpdateDashboard.ps1](Powershell/Dashboards/UpdateDashboard.ps1) | Updates an existing dashboard by posting a JSON definition file to the dashboard's Updates endpoint. |
 | [ListDashboardUpdates.ps1](Powershell/Dashboards/ListDashboardUpdates.ps1) | Lists the full update history for a specific dashboard. |
 | [GetDashboardUpdate.ps1](Powershell/Dashboards/GetDashboardUpdate.ps1) | Retrieves the full details of a specific dashboard update by dashboard ID and update ID. |
+| [TransferDashboard.ps1](Powershell/Dashboards/TransferDashboard.ps1) | Transfer a  dashboard from one user to another. |
+
 
 Multi-step/interactive scripts
 
