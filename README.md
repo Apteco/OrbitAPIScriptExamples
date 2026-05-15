@@ -35,6 +35,8 @@ There are some simple single-step scripts that perform a simple action (in one o
 
 For examples of how some of the simple scripts could be combined to perform more complex actions, see [docs/script-cookbook.md](docs/script-cookbook.md).
 
+For example prompts that can be used with AI tools to produce similar scripts for other tasks see [docs/ai-prompt-ideas.md](docs/ai-prompt-ideas.md).  NOTE: Any generated scripts should be checked thoroughly before being run as AI can produce incorrect/dangerous results.
+
 ## Disclaimer
 
 > [!WARNING]
