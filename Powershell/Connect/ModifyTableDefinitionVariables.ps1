@@ -1,11 +1,13 @@
 <#
 .SYNOPSIS
-    Updates variable details across all table definitions based on a spec file.
+    Updates variable details across all user-defined table definitions based on a
+    spec file.
 
 .DESCRIPTION
-    Reads a JSON spec file describing variable changes, fetches all table definitions
-    from the Connect API, applies the specified variable changes to any matching
-    variables, then posts an update for each table definition that was modified.
+    Reads a JSON spec file describing variable changes, fetches all user-defined
+    table definitions from the Connect API, applies the specified variable changes
+    to any matching variables, then posts an update for each table definition that
+    was modified.
 
     The spec file must have the following structure:
 

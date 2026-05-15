@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Posts a JSON file to update an existing table definition in the Apteco Connect API.
+    Posts a JSON file to update an existing user-defined table definition in the Apteco Connect API.
  
 .DESCRIPTION
     Uses a valid access token to POST a JSON file to /{dataViewName}/TableDefinitions/{tableDefinitionId}/Updates.
@@ -15,7 +15,7 @@
     A valid access token (gained from the Login.ps1 script) to authenticate with.
  
 .PARAMETER TableDefinitionId
-    The ID of the table definition to update.
+    The ID of the user-defined table definition to update.
  
 .PARAMETER TableDefinitionJsonPath
     The path to the JSON file to post to the TableDefinitions endpoint.

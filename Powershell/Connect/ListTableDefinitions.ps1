@@ -1,9 +1,10 @@
 <#
 .SYNOPSIS
-    Lists all table definitions in a DataView.
+    Lists all user-defined table definitions in a DataView.
 
 .DESCRIPTION
-    Uses a valid access token to GET the list of table definitions from /{dataViewName}/TableDefinitions.
+    Uses a valid access token to GET the list of user-defined table definitions
+    from /{dataViewName}/TableDefinitions.
     Requires the OrbitAdmin role.
 
 .PARAMETER BaseUrl

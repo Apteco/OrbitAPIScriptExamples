@@ -1,9 +1,10 @@
 <#
 .SYNOPSIS
-    Gets a specific table definition in a DataView.
+    Gets a specific user-defined table definition in a DataView.
 
 .DESCRIPTION
-    Uses a valid access token to GET a specific table definition from /{dataViewName}/TableDefinitions/{tableDefinitionId}.
+    Uses a valid access token to GET a specific user-defined table definition from
+    /{dataViewName}/TableDefinitions/{tableDefinitionId}.
     Requires the OrbitAdmin role.
 
 .PARAMETER BaseUrl
@@ -16,7 +17,7 @@
     A valid access token (gained from the Login.ps1 script) to authenticate with.
 
 .PARAMETER TableDefinitionId
-    The ID of the table definition to retrieve.
+    The ID of the user-defined table definition to retrieve.
 
 .EXAMPLE
     .\GetTableDefinition.ps1 `

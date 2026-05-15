@@ -107,12 +107,12 @@ Simple single-step scripts
 
 | Script | Synopsis |
 |--------|----------|
-| [ListTableDefinitions.ps1](Powershell/Connect/ListTableDefinitions.ps1) | Lists all table definitions in a DataView (requires OrbitAdmin role). |
-| [GetTableDefinition.ps1](Powershell/Connect/GetTableDefinition.ps1) | Retrieves the full details of a single table definition by ID and outputs them as JSON (requires OrbitAdmin role). |
-| [UpdateTableDefinition.ps1](Powershell/Connect/UpdateTableDefinition.ps1) | Updates an existing table definition by posting a JSON definition file to its Updates endpoint (requires OrbitAdmin role). |
+| [ListTableDefinitions.ps1](Powershell/Connect/ListTableDefinitions.ps1) | Lists all user-defined table definitions in a DataView (requires OrbitAdmin role). |
+| [GetTableDefinition.ps1](Powershell/Connect/GetTableDefinition.ps1) | Retrieves the full details of a single user-defined table definition by ID and outputs them as JSON (requires OrbitAdmin role). |
+| [UpdateTableDefinition.ps1](Powershell/Connect/UpdateTableDefinition.ps1) | Updates an existing user-defined table definition by posting a JSON definition file to its Updates endpoint (requires OrbitAdmin role). |
 
 Multi-step/interactive scripts
 
 | Script | Synopsis |
 |--------|----------|
-| [ModifyTableDefinitionVariables.ps1](Powershell/Connect/ModifyTableDefinitionVariables.ps1) | Reads a JSON spec file describing variable changes, applies them across all matching table definitions, and posts an update for each modified definition (requires OrbitAdmin role). See [example-table-definition-updates-spec.json](Powershell/example-table-definition-updates-spec.json) for the spec file format. |
+| [ModifyTableDefinitionVariables.ps1](Powershell/Connect/ModifyTableDefinitionVariables.ps1) | Reads a JSON spec file describing variable changes, applies them across all matching user-defined table definitions, and posts an update for each modified definition (requires OrbitAdmin role). See [example-table-definition-updates-spec.json](Powershell/example-table-definition-updates-spec.json) for the spec file format. |
