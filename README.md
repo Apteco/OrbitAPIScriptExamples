@@ -50,13 +50,13 @@ Each script has documentation at the top of the script.  Each script is also sta
 
 ### Authentication
 
-Simple single-step scripts
+#### Simple single-step scripts
 
 | Script | Synopsis |
 |--------|----------|
 | [Login.ps1](Powershell/Login.ps1) | Authenticates against the Orbit API and outputs an access token for use with other scripts. |
 
-Multi-step/interactive scripts
+#### Multi-step/interactive scripts
 
 | Script | Synopsis |
 |--------|----------|
@@ -66,7 +66,7 @@ Multi-step/interactive scripts
 
 ### Dashboards  *(Orbit API)*
 
-Simple single-step scripts
+#### Simple single-step scripts
 
 | Script | Synopsis |
 |--------|----------|
@@ -80,7 +80,7 @@ Simple single-step scripts
 | [TransferDashboard.ps1](Powershell/Dashboards/TransferDashboard.ps1) | Transfer a  dashboard from one user to another. |
 
 
-Multi-step/interactive scripts
+#### Multi-step/interactive scripts
 
 | Script | Synopsis |
 |--------|----------|
@@ -90,7 +90,7 @@ Multi-step/interactive scripts
 
 ### Dashboard Themes  *(Orbit API)*
 
-Simple single-step scripts
+#### Simple single-step scripts
 
 | Script | Synopsis |
 |--------|----------|
@@ -103,7 +103,7 @@ Simple single-step scripts
 
 ### Table Definitions  *(Connect API)*
 
-Simple single-step scripts
+#### Simple single-step scripts
 
 | Script | Synopsis |
 |--------|----------|
@@ -111,8 +111,8 @@ Simple single-step scripts
 | [GetTableDefinition.ps1](Powershell/Connect/GetTableDefinition.ps1) | Retrieves the full details of a single user-defined table definition by ID and outputs them as JSON (requires OrbitAdmin role). |
 | [UpdateTableDefinition.ps1](Powershell/Connect/UpdateTableDefinition.ps1) | Updates an existing user-defined table definition by posting a JSON definition file to its Updates endpoint (requires OrbitAdmin role). |
 
-Multi-step/interactive scripts
+#### Multi-step/interactive scripts
 
 | Script | Synopsis |
 |--------|----------|
-| [ModifyTableDefinitionVariables.ps1](Powershell/Connect/ModifyTableDefinitionVariables.ps1) | Reads a JSON spec file describing variable changes, applies them across all matching user-defined table definitions, and posts an update for each modified definition (requires OrbitAdmin role). See [example-table-definition-updates-spec.json](Powershell/example-table-definition-updates-spec.json) for the spec file format. |
+| [ModifyTableDefinitionVariables.ps1](Powershell/Connect/ModifyTableDefinitionVariables.ps1) | Reads a JSON spec file describing variable changes, applies them across all matching user-defined table definitions, and posts an update for each modified definition (requires OrbitAdmin role). |

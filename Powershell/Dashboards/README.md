@@ -1,4 +1,4 @@
-# Dashboard Script 
+# Dashboard Scripts 
 
 This directory contains example scripts to manipulate Orbit Dashboards, including for listing, creating and updating dashboard definitions
 
@@ -13,7 +13,7 @@ This directory contains example scripts to manipulate Orbit Dashboards, includin
 
 Each script has documentation at the top of the script.  Each script is also standalone and doesn't require custom modules or third-party dependencies to run.
 
-Simple single-step scripts
+#### Simple single-step scripts
 
 | Script | Synopsis |
 |--------|----------|
@@ -27,7 +27,7 @@ Simple single-step scripts
 | [TransferDashboard.ps1](./TransferDashboard.ps1) | Transfer a  dashboard from one user to another. |
 
 
-Multi-step/interactive scripts
+#### Multi-step/interactive scripts
 
 | Script | Synopsis |
 |--------|----------|
