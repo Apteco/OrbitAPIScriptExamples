@@ -13,7 +13,10 @@
  
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.
- 
+
+.PARAMETER SystemName
+    The name of the system (within the Data View) to create the dashboard in.
+
 .PARAMETER DashboardJsonPath
     The path to the JSON file to post to the Dashboards endpoint.
  
@@ -22,6 +25,7 @@
         -BaseUrl "https://example.com/holidays/OrbitAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `
+        -SystemName "holidays" `
         -DashboardJsonPath ".\dashboard.json"
 #>
  
@@ -37,6 +41,9 @@ param (
     [string]$AccessToken,
  
     [Parameter(Mandatory = $true)]
+    [string]$SystemName,
+ 
+    [Parameter(Mandatory = $true)]
     [string]$DashboardJsonPath
 )
  
@@ -48,7 +55,25 @@ function Stop-WithError {
     Write-Error $Message
     exit 1
 }
- 
+
+# ---------------------------------------------------------------------------
+# Helper: ensure property exists on object with value
+# ---------------------------------------------------------------------------
+function UpsertPropertyValue {
+    param(
+        [psobject]$Obj,
+        [string]$PropertyName,
+        [string]$PropertyValue
+    )
+
+    if (-not (Get-Member -InputObject $Obj -Name $PropertyName -MemberType NoteProperty)) {
+        $Obj | Add-Member -NotePropertyName $PropertyName -NotePropertyValue $PropertyValue
+    } else {
+        $Obj.$PropertyName = $PropertyValue
+    }
+}
+
+
 # ---------------------------------------------------------------------------
 # Validate the dashboard JSON file exists
 # ---------------------------------------------------------------------------
@@ -61,9 +86,13 @@ if (-not (Test-Path -Path $DashboardJsonPath -PathType Leaf)) {
 # ---------------------------------------------------------------------------
 $dashboardUrl  = "$BaseUrl/$DataViewName/Dashboards"
 $dashboardJson = Get-Content -Path $DashboardJsonPath -Raw
- 
+
+$dashboardToCreate = ConvertFrom-Json -InputObject $dashboardJson
+UpsertPropertyValue -Obj $dashboardToCreate -PropertyName 'systemName' -PropertyValue $SystemName
+$dashboardJson = ConvertTo-Json -InputObject $dashboardToCreate -Depth 100
+
 Write-Host "Posting dashboard JSON from '$DashboardJsonPath' to '$dashboardUrl'..." -ForegroundColor Cyan
- 
+
 $headers = @{
     Authorization = "Bearer $AccessToken"
 }
