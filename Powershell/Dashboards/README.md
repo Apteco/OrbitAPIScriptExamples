@@ -36,6 +36,4 @@ Each script has documentation at the top of the script.  Each script is also sta
 
 ## Example usage
 
-Each of these scripts can be used in a number of ways:
-- See [docs/dashboards-example-usage.md](../../docs/dashboards-example-usage.md) for some examples of calling scripts one after the other interactively.
-- Alternatively see [docs/script-cookbook.md](../../docs/script-cookbook.md) for examples of how to take the essence of these scripts and write a single master script that calls multiple endpoints to achieve a complex outcome.
+Each of these scripts can be used in a number of ways.  See [docs/script-cookbook.md](../../docs/script-cookbook.md) for some examples of calling multiple scripts to achieve a larger result.
