@@ -4,6 +4,8 @@ The Orbit API is powerful and has many capabilities.  Everything that can be don
 
 Given the JSON definition of the API available from the API's "Swagger"/"Open API" page, plus the example scripts in this repository you could use an AI tool to generate further scripts to perform tasks not covered in the existing scripts.
 
+There is also information about how to interact with the Orbit API and some of the more pertinent endpoints in [orbit-api-overview.md](orbit-api-overview.md)
+
 ## Disclaimer
 
 > [!WARNING]
