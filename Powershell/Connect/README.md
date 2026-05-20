@@ -13,6 +13,8 @@ This directory contains example scripts to manipulate user-defined tables via th
 
 Each script has documentation at the top of the script.  Each script is also standalone and doesn't require custom modules or third-party dependencies to run.
 
+**NOTE**: When calling these scripts you must provide the Orbit Connect API's URL for the `BaseUrl` parameter.
+
 #### Simple single-step scripts
 
 | Script | Synopsis |
