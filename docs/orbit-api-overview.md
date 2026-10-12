@@ -1,6 +1,6 @@
 # Orbit API Overview
 
-The **Apteco Orbit API** provides programmatic access to the Orbit platform. It covers managing Orbit Audiences, Dashboard and Campaigns, Variable and Table metadata and User management, amongst other things.
+The **Apteco Orbit API** provides programmatic access to the Orbit platform. It covers managing Orbit Audiences, Dashboards and Campaigns, Variable and Table metadata and User management, amongst other things.
 
 - **Base URL:** This is typically `https://<host>/OrbitAPI/` (such as `https://example.com/OrbitAPI`).
 - **Swagger specification:** If the OrbitAPI base URL is `https://example.com/OrbitAPI`, then the swagger specification JSON document will be available at `https://example.com/OrbitAPI/swagger/v2/swagger.json`
@@ -10,7 +10,7 @@ The **Apteco Orbit API** provides programmatic access to the Orbit platform. It 
 
 There are some key ideas and shared patterns used across the API:
 
-- **Data Views** - Most resources are grouped in to Data Views, and so a `{dataViewName}` is often required as part of the API endpoint URL.
+- **Data Views** - Most resources are grouped into Data Views, and so a `{dataViewName}` is often required as part of the API endpoint URL.
 - **Systems** - A Data View can contain one or more systems and many endpoints require the system name to be specified as well as the Data View.
 - **Async job pattern** — Long-running operations follow a consistent three-step pattern:
   1. `POST .../XxxJobs` — Submit the job and receive a `jobId`.
@@ -38,7 +38,7 @@ Each of the endpoints in the Orbit API has a function and use-case, but some of 
 - Sharing
 - FastStats System
 
-A summary for some of the important endpoints in these categories are listed below.  For detailed information about each endpoint or the list of other endpoints refer to the Swagger documentation.
+A summary of some of the important endpoints in these categories is listed below.  For detailed information about each endpoint or the list of other endpoints refer to the Swagger documentation.
 
 ---
 
@@ -95,7 +95,7 @@ A series of endpoints that allow for getting information on users within Data Vi
 
 ### Audiences
 
-A series of endpoints that allow for retreiving and modifying Orbit Audiences and for retreiving and modifying favourites used to create audience workbook items.
+A series of endpoints that allow for retrieving and modifying Orbit Audiences and for retrieving and modifying favourites used to create audience workbook items.
 
 #### Audiences endpoints
 | Method   | Path | Description |
@@ -123,7 +123,7 @@ A series of endpoints that allow for retreiving and modifying Orbit Audiences an
 
 ### Dashboards
 
-A series of endpoints that allow for retreiving and modifying Orbit Dashboards and for retreiving and modifying themes used within dashboards.
+A series of endpoints that allow for retrieving and modifying Orbit Dashboards and for retrieving and modifying themes used within dashboards.
 
 #### Dashboards endpoints
 
@@ -210,7 +210,7 @@ A series of endpoints that allow for getting information about Orbit Campaigns (
 
 ### Sharing
 
-A series of endpoints that allow for retreiving and modifying information about how resources are shared in Orbit.
+A series of endpoints that allow for retrieving and modifying information about how resources are shared in Orbit.
 
 | Method   | Path | Description |
 |----------|------|-------------|

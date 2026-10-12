@@ -2,7 +2,7 @@
 
 The Orbit API is powerful and has many capabilities.  Everything that can be done via the Orbit UI is possible through the Orbit API, plus some further features that are not exposed in the UI (such as viewing the history of changes for a dashboard or audience).
 
-Given the JSON definition of the API available from the API's "Swagger"/"Open API" page, plus the example scripts in this repository you could use an AI tool to generate further scripts to perform tasks not covered in the existing scripts.
+Given the JSON definition of the API available from the API's "Swagger"/"OpenAPI" page, plus the example scripts in this repository you could use an AI tool to generate further scripts to perform tasks not covered in the existing scripts.
 
 There is also information about how to interact with the Orbit API and some of the more pertinent endpoints in [orbit-api-overview.md](orbit-api-overview.md)
 
@@ -11,7 +11,7 @@ There is also information about how to interact with the Orbit API and some of t
 > [!WARNING]
 > The scripts in this repository are provided as examples only. They are not officially supported and are intended as a starting point for your own automation. No warranty is given as to their correctness or fitness for any particular purpose.
 >
-> If you then generate new scripts (either manually of via AI) then these will also need careful review and testing.  You must take full responsibility for the running of these scripts in your environment.
+> If you then generate new scripts (either manually or via AI) then these will also need careful review and testing.  You must take full responsibility for the running of these scripts in your environment.
 >
 > Always test scripts in a non-production environment before running them against live systems. Some scripts may make destructive or irreversible changes (such as creating, updating or deleting definitions), so review each script carefully before use.
 
@@ -30,17 +30,17 @@ Using Claude Code or similar coding agent (and replacing in your API's URL in pl
 
 ```
 Using the example scripts underneath the directory https://github.com/Apteco/OrbitAPIScriptExamples/tree/main/Powershell,
-and the API defintion at https://example.com/OrbitAPI/swagger/v2/swagger.json, create a
+and the API definition at https://example.com/OrbitAPI/swagger/v2/swagger.json, create a
 similar script to Transfer Audiences to another user.
 
 The swagger.json definition is big - it might be beneficial to download it to a temporary location.
 ```
 
-Note - if you are not using a coding agent, then downloading the JSON definition from the URL, as well as some of the scripts in this projet and providing them to the AI as attachments might help:
+Note - if you are not using a coding agent, then downloading the JSON definition from the URL, as well as some of the scripts in this project and providing them to the AI as attachments might help:
 
 ```
 [Attach: swagger.json]
-[Attach: TransferDashbord.ps1]
+[Attach: TransferDashboard.ps1]
 Using the attached script and swagger definition, create a similar script to Transfer Audiences to another user.
 ```
 
@@ -50,7 +50,7 @@ Using Claude Code or similar coding agent (and replacing in your API's URL in pl
 
 ```
 Using the example scripts underneath the directory https://github.com/Apteco/OrbitAPIScriptExamples/tree/main/Powershell,
-and the API defintion at https://example.com/OrbitAPI/swagger/v2/swagger.json, create a
+and the API definition at https://example.com/OrbitAPI/swagger/v2/swagger.json, create a
 script to generate a workspace and add all dashboards modified today into it.
 
 The swagger.json definition is big - it might be beneficial to download it to a temporary location.
@@ -62,7 +62,7 @@ Using Claude Code or similar coding agent (and replacing in your API's URL in pl
 
 ```
 Using the example scripts underneath the directory https://github.com/Apteco/OrbitAPIScriptExamples/tree/main/Powershell,
-and the API defintion at https://example.com/OrbitAPI/swagger/v2/swagger.json, create a
+and the API definition at https://example.com/OrbitAPI/swagger/v2/swagger.json, create a
 script to find all date time variables defined in the Connect system.
 
 The swagger.json definition is big - it might be beneficial to download it to a temporary location.
@@ -70,7 +70,7 @@ The swagger.json definition is big - it might be beneficial to download it to a 
 
 ```
 Using the example scripts underneath the directory https://github.com/Apteco/OrbitAPIScriptExamples/tree/main/Powershell,
-and the API defintion at https://example.com/OrbitAPI/swagger/v2/swagger.json, create a
+and the API definition at https://example.com/OrbitAPI/swagger/v2/swagger.json, create a
 script to find all date time variables, once the system has been built from the FastStatsSystems endpoints.
 
 The swagger.json definition is big - it might be beneficial to download it to a temporary location.

@@ -5,7 +5,7 @@ These scripts could be useful for automating administrative tasks within the Orb
 
 - 🧑‍🎨 Change the theme on one or more dashboards 
 - ⬅️ Revert back to a previous save on one or more dashboards
-- ✏️ Programatically modify one or more dashboards
+- ✏️ Programmatically modify one or more dashboards
 - 👤 Transfer the ownership of one or more dashboards
 - ...
 
@@ -72,12 +72,12 @@ Each script has documentation at the top of the script.  Each script is also sta
 |--------|----------|
 | [ListDashboards.ps1](Powershell/Dashboards/ListDashboards.ps1) | Lists all dashboards in a DataView that are owned by the authenticated user. |
 | [ListAllDashboards.ps1](Powershell/Dashboards/ListAllDashboards.ps1) | Lists all dashboards in a DataView across all users (requires admin access). |
-| [GetDashboard.ps1](Powershell/Dashboards/GetDashboard.ps1) | Retrieves details of a specific dashboard as JSON, although not full details of the items in the dashboard.  These can be looked up with the  `lastUpdateId` in combination with the `GetDashboardUpdate.ps1` script. |
+| [GetDashboard.ps1](Powershell/Dashboards/GetDashboard.ps1) | Retrieves details of a specific dashboard as JSON, although not full details of the items in the dashboard.  These can be looked up with the `lastUpdateId` in combination with the `GetDashboardUpdate.ps1` script. |
 | [CreateDashboard.ps1](Powershell/Dashboards/CreateDashboard.ps1) | Creates a new dashboard by posting a JSON definition file to the API. |
 | [UpdateDashboard.ps1](Powershell/Dashboards/UpdateDashboard.ps1) | Updates an existing dashboard by posting a JSON definition file to the dashboard's Updates endpoint. |
 | [ListDashboardUpdates.ps1](Powershell/Dashboards/ListDashboardUpdates.ps1) | Lists the full update history for a specific dashboard. |
 | [GetDashboardUpdate.ps1](Powershell/Dashboards/GetDashboardUpdate.ps1) | Retrieves the full details of a specific dashboard update by dashboard ID and update ID. |
-| [TransferDashboard.ps1](Powershell/Dashboards/TransferDashboard.ps1) | Transfer a  dashboard from one user to another. |
+| [TransferDashboard.ps1](Powershell/Dashboards/TransferDashboard.ps1) | Transfers a dashboard from one user to another. |
 
 
 #### Multi-step/interactive scripts

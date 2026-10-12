@@ -21,7 +21,7 @@
     The path to the JSON file to post to the Dashboards endpoint.
  
 .EXAMPLE
-    .\CreateDashboards.ps1 `
+    .\CreateDashboard.ps1 `
         -BaseUrl "https://example.com/holidays/OrbitAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `

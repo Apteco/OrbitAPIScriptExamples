@@ -25,7 +25,7 @@
         ]
     }
 
-    The properties to be sent depend on the variable type. Use the GetTableDefintion
+    The properties to be sent depend on the variable type. Use the GetTableDefinition
     script to see examples from your system.
 
     Only fields present (non-null) in new_definition are applied; omitted fields
@@ -44,7 +44,7 @@
     Path to the JSON file containing the variable mapping specification.
 
 .EXAMPLE
-    .\UpdateTableDefinitionVariables.ps1 `
+    .\ModifyTableDefinitionVariables.ps1 `
         -BaseUrl "https://example.com/holidays/OrbitConnectAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `

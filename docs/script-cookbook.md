@@ -2,8 +2,8 @@
 
 Here are some examples showing how the individual scripts can be combined into larger workflows.
 
-- Calling multiple scripts iteractively to create a modified copy of a dashboard
-- Calling multiple scripts iteractively to programatically update a dashboard
+- Calling multiple scripts interactively to create a modified copy of a dashboard
+- Calling multiple scripts interactively to programmatically update a dashboard
 - A single script to modify all dashboards for a user — replace a string in every dashboard definition
 - A single script to set the theme for a specific dashboard
 
@@ -17,7 +17,7 @@ dashboard.
 **Scripts used:**
 - `Login.ps1` — obtain an access token
 - `ListDashboards.ps1` — get all dashboard IDs for the user
-- `ListDashboardUpdates.ps1` - get all the dashboard updates for thr given dashboard
+- `ListDashboardUpdates.ps1` - get all the dashboard updates for the given dashboard
 - `GetDashboardUpdate.ps1` — fetch the full JSON definition for the latest update
 - `CreateDashboard.ps1` — post a modified definition to create a new dashboard
 
@@ -80,7 +80,7 @@ tile titles in one dashboard
 - `Login.ps1` — obtain an access token
 - `ListDashboardUpdates.ps1` - get all the dashboard updates for the given dashboard
 - `GetDashboardUpdate.ps1` — fetch the full JSON definition for the latest update
-- `UpdateDashboard.ps1` — post a modified definition to create a new dashboard
+- `UpdateDashboard.ps1` — post a modified definition to update the dashboard
 
 ### How it works
 
@@ -89,7 +89,7 @@ In this example the given steps are followed.  It is assumed that we already kno
 - List all the updates for the given dashboard
 - Save the details of the latest dashboard update to a file
 - Modify the file (e.g. do a search and replace on the titles of all tiles in the dashboard definition)
-- Create a new dashboard from the modified definition
+- Update the dashboard from the modified definition
 
 > [!WARNING]
 > This script modifies dashboards in place. Test against a non-production system first,
@@ -104,7 +104,7 @@ In this example the given steps are followed.  It is assumed that we already kno
 Enter password: *******
 
 > .\Dashboards\ListDashboardUpdates.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -AccessToken $token -DashboardId 42
-Getting dashboard updates for dashboard 3...
+Getting dashboard updates for dashboard 42...
 01/01/2026 09:00:00 (update 101): Dashboard 'Life, the universe and everything' updated by administrator
 01/01/2026 10:00:00 (update 102): Dashboard 'Life, the universe and everything' updated by administrator
 02/01/2026 09:00:00 (update 103): Dashboard 'Life, the universe and everything' updated by administrator
@@ -554,6 +554,6 @@ Dashboard 'Impact Report Last Month' theme updated to 'Corporate Blue'.
   behaviour by setting `ThemeName` to the theme currently marked `[DEFAULT]`, or by changing 
   the target theme ID to `0` in the script if you want to explicitly revert to the default.
 
-- **Theme name matching is case-sensitive** — the comparison uses PowerShell's default `-eq` 
+- **Theme name matching is case-insensitive** — the comparison uses PowerShell's default `-eq` 
   operator, which is case-insensitive on Windows. If your theme names differ only in case, 
   tighten the match with `-ceq`.

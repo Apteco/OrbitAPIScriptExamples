@@ -11,8 +11,11 @@
 .PARAMETER DataViewName
     The name of the DataView to act on, e.g. "holidays"
  
-.PARAMETER Credential
-    The credentials to authenticate with. If omitted, PowerShell will prompt securely.
+.PARAMETER Username
+    The username to authenticate with, e.g. "Administrator"
+
+.PARAMETER Password
+    The password to authenticate with. If omitted, PowerShell will prompt securely.
 
 .EXAMPLE
     .\Login.ps1 `
