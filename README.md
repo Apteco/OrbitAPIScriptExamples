@@ -37,6 +37,10 @@ For examples of how some of the simple scripts could be combined to perform more
 
 For example prompts that can be used with AI tools to produce similar scripts for other tasks see [docs/ai-prompt-ideas.md](docs/ai-prompt-ideas.md).  NOTE: Any generated scripts should be checked thoroughly before being run as AI can produce incorrect/dangerous results.
 
+## What even is the Orbit API?
+
+The Orbit API is a RESTful API that provides the functionality for the Orbit platform, connecting to the rest of the Apteco software.  It can be used programmatically to achieve everything you can do via the Orbit UI.  For more details, see [docs/orbit-api-overview.md](docs/orbit-api-overview.md).
+
 ## Disclaimer
 
 > [!WARNING]
