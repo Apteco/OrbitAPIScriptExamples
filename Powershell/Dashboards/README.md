@@ -4,10 +4,7 @@ This directory contains example scripts to manipulate Orbit Dashboards, includin
 
 ## Disclaimer
 
-> [!WARNING]
-> These scripts are provided as examples only. They are not officially supported and are intended as a starting point for your own automation. No warranty is given as to their correctness or fitness for any particular purpose.
->
-> Always test scripts in a non-production environment before running them against live systems. Some of these scripts may make destructive or irreversible changes (such as creating, updating or deleting definitions), so review each script carefully before use.
+See the [disclaimer](../../README.md#disclaimer) in the main README.
 
 ## Scripts
 
@@ -36,4 +33,4 @@ Each script has documentation at the top of the script.  Each script is also sta
 
 ## Example usage
 
-Each of these scripts can be used in a number of ways.  See [docs/script-cookbook.md](../../docs/script-cookbook.md) for some examples of calling multiple scripts to achieve a larger result.
+Each of these scripts can be used in a number of ways.  See [docs/combining-scripts.md](../../docs/combining-scripts.md) for some examples of calling multiple scripts to achieve a larger result.
