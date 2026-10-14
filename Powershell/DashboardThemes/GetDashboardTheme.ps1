@@ -1,15 +1,15 @@
 <#
 .SYNOPSIS
-    Gets a particular dashboard theme from a DataView.
+    Gets a dashboard theme from a DataView.
  
 .DESCRIPTION
     Uses a valid access token to GET a dashboard theme from /{dataViewName}/Themes/{themeId}.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
  
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
  
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.

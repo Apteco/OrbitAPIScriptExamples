@@ -1,15 +1,15 @@
 <#
 .SYNOPSIS
-    Posts a JSON file to update an existing user-defined table definition in the Apteco Connect API.
+    Updates a user-defined table definition from a JSON definition file.
  
 .DESCRIPTION
     Uses a valid access token to POST a JSON file to /{dataViewName}/TableDefinitions/{tableDefinitionId}/Updates.
  
 .PARAMETER BaseUrl
-    The base URL of the Connect API, e.g. https://example.com/holidays/OrbitConnectAPI
+    The base URL of the Connect API, for example https://example.com/holidays/OrbitConnectAPI
  
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
  
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.

@@ -13,7 +13,9 @@ All of these things can be done via the Orbit API, but by automating things thes
 
 ## Prerequisites
 
-All the scripts are written in Powershell and should work with Powershell 4+.  They generally require a valid access token. Use `Login.ps1` to obtain one before running any other script.
+All the scripts are written in PowerShell and should work with PowerShell 4+, against Orbit API 2.3.10 or later.  They generally require a valid access token. Use `Login.ps1` to obtain one before running any other script.
+
+New to the Orbit API? Start with [docs/getting-started.md](docs/getting-started.md).
 
 ```
 > cd .\Powershell
@@ -33,7 +35,7 @@ Got 3 dashboards
 
 There are some simple single-step scripts that perform a simple action (in one or two API calls), and other scripts that perform more complex tasks in multiple steps.
 
-For examples of how some of the simple scripts could be combined to perform more complex actions, see [docs/script-cookbook.md](docs/script-cookbook.md).
+For examples of how some of the simple scripts could be combined to perform more complex actions, see [docs/combining-scripts.md](docs/combining-scripts.md).
 
 For example prompts that can be used with AI tools to produce similar scripts for other tasks see [docs/ai-prompt-ideas.md](docs/ai-prompt-ideas.md).  NOTE: Any generated scripts should be checked thoroughly before being run as AI can produce incorrect/dangerous results.
 
@@ -119,4 +121,22 @@ Each script has documentation at the top of the script.  Each script is also sta
 
 | Script | Synopsis |
 |--------|----------|
-| [ModifyTableDefinitionVariables.ps1](Powershell/Connect/ModifyTableDefinitionVariables.ps1) | Reads a JSON spec file describing variable changes, applies them across all matching user-defined table definitions, and posts an update for each modified definition (requires OrbitAdmin role). |
+| [ModifyTableDefinitionVariables.ps1](Powershell/Connect/ModifyTableDefinitionVariables.ps1) | Reads a JSON specification file describing variable changes, applies them across all matching user-defined table definitions, and posts an update for each modified definition (requires OrbitAdmin role). |
+
+---
+
+### Workflows  *(Orbit API)*
+
+Complete scripts that combine several of the scripts above. Run them from the `Powershell` folder. See [docs/combining-scripts.md](docs/combining-scripts.md) for walkthroughs.
+
+| Script | Synopsis |
+|--------|----------|
+| [ModifyAllUserDashboards.ps1](Powershell/Workflows/ModifyAllUserDashboards.ps1) | Replaces a text value in every dashboard that belongs to the current user. |
+| [SetDashboardTheme.ps1](Powershell/Workflows/SetDashboardTheme.ps1) | Applies a named dashboard theme to a dashboard. |
+
+## Adding a script
+
+1. Write the script with comment-based help at the top: `.SYNOPSIS` (a one-line summary), `.DESCRIPTION`, a `.PARAMETER` for each parameter, and at least one `.EXAMPLE`.
+2. Add it to the tables above.
+3. If it combines other scripts, put it in `Powershell/Workflows` and add a walkthrough to [docs/combining-scripts.md](docs/combining-scripts.md).
+4. Add an entry for it to [registry.yaml](registry.yaml). The Apteco Help Hub builds a page for each script in the registry, using the script's comment-based help for the content.

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Performs a few checks against the OrbitAPI, ConnectAPI and ChatAPI to check that they are healthy
+    Checks that the Orbit API, and optionally the Connect and Chat APIs, are running and can reach their dependencies.
  
 .DESCRIPTION
     Performs a series of connectivity checks against the Orbit API and, optionally, the Connect
@@ -8,16 +8,16 @@
     and that it can reach its own dependencies (databases, FastStats services, Apteco AI proxy).
  
 .PARAMETER OrbitBaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
 
 .PARAMETER ConnectBaseUrl
-    The base URL of the Connect API, e.g. https://example.com/holidays/OrbitConnectAPI.  Can be omitted if ConnectAPI checks are not required.
+    The base URL of the Connect API, for example https://example.com/holidays/OrbitConnectAPI.  Can be omitted if ConnectAPI checks aren't required.
 
 .PARAMETER ChatBaseUrl
-    The base URL of the Chat API, e.g. https://example.com/holidays/ChatAPI.  Can be omitted if ChatAPI checks are not required.
+    The base URL of the Chat API, for example https://example.com/holidays/ChatAPI.  Can be omitted if ChatAPI checks aren't required.
 
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
  
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.

@@ -1,15 +1,15 @@
 <#
 .SYNOPSIS
-    Posts a dashboard JSON file to the Apteco Orbit API to update an existing dashboard.
+    Updates a dashboard from a JSON definition file.
  
 .DESCRIPTION
     Uses a valid access token to POST a JSON file to /{dataViewName}/Dashboards/{dashboardId}/Updates.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
  
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
  
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.
