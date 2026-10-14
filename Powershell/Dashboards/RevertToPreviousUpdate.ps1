@@ -9,10 +9,10 @@
     a new dashboard update based on the definition of the selected historical version.
 
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
 
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
 
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.

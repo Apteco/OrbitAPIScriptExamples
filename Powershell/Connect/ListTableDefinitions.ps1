@@ -8,10 +8,10 @@
     Requires the OrbitAdmin role.
 
 .PARAMETER BaseUrl
-    The base URL of the Connect API, e.g. https://example.com/holidays/OrbitConnectAPI
+    The base URL of the Connect API, for example https://example.com/holidays/OrbitConnectAPI
 
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
 
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.

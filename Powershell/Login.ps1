@@ -6,13 +6,13 @@
     1. Calls POST /{dataViewName}/Sessions/SimpleLogin to obtain an access token.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
  
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
  
 .PARAMETER Username
-    The username to authenticate with, e.g. "Administrator"
+    The username to authenticate with, for example "Administrator"
 
 .PARAMETER Password
     The password to authenticate with. If omitted, PowerShell will prompt securely.
