@@ -159,8 +159,7 @@ catch {
     Stop-WithError "Orbit API user details check failed (HTTP $statusCode). Response: $errorBody`nError: $_"
 }
 
-$aiId = $userResponse.licence.aiId
-Write-Host "✅ Orbit API user details check successful (found user '$username' with AI Id '$aiId')." -ForegroundColor Green
+Write-Host "✅ Orbit API user details check successful (found user '$username')." -ForegroundColor Green
 Write-Host "   - Orbit API can connect to Orbit database" -ForegroundColor Green
 
 # ---------------------------------------------------------------------------
