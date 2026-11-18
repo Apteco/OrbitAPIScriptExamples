@@ -4,7 +4,14 @@
  
 .DESCRIPTION
     1. Calls POST /{dataViewName}/Sessions/SimpleLogin to obtain an access token.
- 
+    2. If the user has multi-factor authentication (MFA) turned on, SimpleLogin
+       returns an MFA challenge instead. The script asks for the 6-digit code
+       from the user's authenticator app and calls
+       POST /{dataViewName}/Sessions/Mfa/Totp/Verify to obtain the access token.
+
+    MFA codes change every 30 seconds and must be typed in by a person, so
+    users with MFA turned on can't run this script unattended.
+
 .PARAMETER BaseUrl
     The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
  
@@ -16,6 +23,10 @@
 
 .PARAMETER Password
     The password to authenticate with. If omitted, PowerShell will prompt securely.
+
+.PARAMETER MfaCode
+    The current 6-digit code from the user's authenticator app. Only used if the
+    user has MFA turned on. If omitted, PowerShell will prompt for it when needed.
 
 .EXAMPLE
     .\Login.ps1 `
@@ -36,7 +47,10 @@ param (
     [string]$Username,
  
     [Parameter(Mandatory = $false)]
-    [string]$Password
+    [string]$Password,
+
+    [Parameter(Mandatory = $false)]
+    [string]$MfaCode
  )
  
 # ---------------------------------------------------------------------------
@@ -77,8 +91,43 @@ catch {
     $errorBody  = if ($_.ErrorDetails) { $_.ErrorDetails.Message } else { $null }
     Stop-WithError "Login failed (HTTP $statusCode). Response: $errorBody`nError: $_"
 }
- 
-# The API returns an object with an AccessToken property
+
+# ---------------------------------------------------------------------------
+# Complete the MFA challenge, if the user has MFA turned on
+## ---------------------------------------------------------------------------
+if ($loginResponse.state -eq 'SetupRequired') {
+    Stop-WithError "User '$Username' must set up MFA before logging in. Log in to Orbit in a web browser to set it up, then run this script again."
+}
+
+if ($loginResponse.state -eq 'Challenge') {
+    if ([string]::IsNullOrEmpty($MfaCode)) {
+        $MfaCode = Read-Host "Enter the 6-digit code from your authenticator app"
+    }
+
+    $verifyUrl  = "$BaseUrl/$DataViewName/Sessions/Mfa/Totp/Verify"
+    $verifyBody = @{
+        mfaAccessToken = $loginResponse.mfaAccessToken
+        code           = $MfaCode
+    } | ConvertTo-Json
+
+    Write-Host "Verifying MFA code against '$verifyUrl'..." -ForegroundColor Cyan
+
+    try {
+        $loginResponse = Invoke-RestMethod `
+            -Uri         $verifyUrl `
+            -Method      POST `
+            -ContentType 'application/json' `
+            -Body        $verifyBody `
+            -ErrorAction Stop
+    }
+    catch {
+        $statusCode = if ($_.Exception.Response) { $_.Exception.Response.StatusCode.value__ } else { $null }
+        $errorBody  = if ($_.ErrorDetails) { $_.ErrorDetails.Message } else { $null }
+        Stop-WithError "MFA verification failed (HTTP $statusCode). The code may be wrong or out of date. Response: $errorBody`nError: $_"
+    }
+}
+
+# The session details include an accessToken property
 $accessToken = $loginResponse.AccessToken
  
 if ([string]::IsNullOrWhiteSpace($accessToken)) {
