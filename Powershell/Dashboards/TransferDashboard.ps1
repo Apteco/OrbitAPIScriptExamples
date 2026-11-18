@@ -76,7 +76,7 @@ try {
     $dashboardResponse = Invoke-RestMethod `
         -Uri         "$($dashboardTransferUrl)?newOwner=$NewOwner" `
         -Method      POST `
-        -ContentType 'application/json' `
+        -ContentType 'application/json; charset=utf-8' `
         -Headers     $headers `
         -Body        $transferDashboardJson `
         -ErrorAction Stop

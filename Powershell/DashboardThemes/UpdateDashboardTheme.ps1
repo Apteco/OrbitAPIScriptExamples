@@ -67,7 +67,7 @@ if (-not (Test-Path -Path $ThemeJsonPath -PathType Leaf)) {
 # Post the theme JSON
 # ---------------------------------------------------------------------------
 $themeUrl  = "$BaseUrl/$DataViewName/Themes/$ThemeId/Updates"
-$themeJson = Get-Content -Path $ThemeJsonPath -Raw
+$themeJson = Get-Content -Path $ThemeJsonPath -Raw -Encoding UTF8
  
 Write-Host "Posting theme JSON from '$ThemeJsonPath' to '$themeUrl'..." -ForegroundColor Cyan
  
@@ -79,7 +79,7 @@ try {
     $themeResponse = Invoke-RestMethod `
         -Uri         $themeUrl `
         -Method      POST `
-        -ContentType 'application/json' `
+        -ContentType 'application/json; charset=utf-8' `
         -Headers     $headers `
         -Body        $themeJson `
         -ErrorAction Stop

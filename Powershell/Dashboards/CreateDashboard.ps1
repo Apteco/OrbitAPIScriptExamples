@@ -85,7 +85,7 @@ if (-not (Test-Path -Path $DashboardJsonPath -PathType Leaf)) {
 # Post the dashboard JSON
 # ---------------------------------------------------------------------------
 $dashboardUrl  = "$BaseUrl/$DataViewName/Dashboards"
-$dashboardJson = Get-Content -Path $DashboardJsonPath -Raw
+$dashboardJson = Get-Content -Path $DashboardJsonPath -Raw -Encoding UTF8
 
 $dashboardToCreate = ConvertFrom-Json -InputObject $dashboardJson
 UpsertPropertyValue -Obj $dashboardToCreate -PropertyName 'systemName' -PropertyValue $SystemName
@@ -101,7 +101,7 @@ try {
     $dashboardResponse = Invoke-RestMethod `
         -Uri         $dashboardUrl `
         -Method      POST `
-        -ContentType 'application/json' `
+        -ContentType 'application/json; charset=utf-8' `
         -Headers     $headers `
         -Body        $dashboardJson `
         -ErrorAction Stop

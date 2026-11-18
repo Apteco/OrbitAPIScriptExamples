@@ -67,7 +67,7 @@ if (-not (Test-Path -Path $DashboardJsonPath -PathType Leaf)) {
 # Post the dashboard update JSON
 # ---------------------------------------------------------------------------
 $dashboardUrl  = "$BaseUrl/$DataViewName/Dashboards/$DashboardId/Updates"
-$dashboardJson = Get-Content -Path $DashboardJsonPath -Raw
+$dashboardJson = Get-Content -Path $DashboardJsonPath -Raw -Encoding UTF8
 
 $dashboardUpdate = ConvertFrom-Json -InputObject $dashboardJson
 $dashboardUpdate.id = $DashboardId
@@ -85,7 +85,7 @@ try {
     $dashboardResponse = Invoke-RestMethod `
         -Uri         $dashboardUrl `
         -Method      POST `
-        -ContentType 'application/json' `
+        -ContentType 'application/json; charset=utf-8' `
         -Headers     $headers `
         -Body        $dashboardJson `
         -ErrorAction Stop

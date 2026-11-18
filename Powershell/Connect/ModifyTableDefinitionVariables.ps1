@@ -81,7 +81,7 @@ if (-not (Test-Path $SpecFile)) {
     Stop-WithError "Spec file not found: $SpecFile"
 }
 
-$spec = Get-Content $SpecFile -Raw | ConvertFrom-Json
+$spec = Get-Content $SpecFile -Raw -Encoding UTF8 | ConvertFrom-Json
 $variableMapping = $spec.variable_mapping
 
 if (-not $variableMapping -or @($variableMapping).Count -eq 0) {
@@ -218,7 +218,7 @@ foreach ($detail in $allDetails) {
         $updateResponse = Invoke-RestMethod `
             -Uri         "${tableDefinitionsUrl}/$($detail.id)/Updates" `
             -Method      POST `
-            -ContentType 'application/json' `
+            -ContentType 'application/json; charset=utf-8' `
             -Headers     $headers `
             -Body        $updateJson `
             -ErrorAction Stop

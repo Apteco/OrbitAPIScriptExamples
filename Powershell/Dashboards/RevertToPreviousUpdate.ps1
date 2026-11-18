@@ -206,7 +206,7 @@ try {
     $revertResponse = Invoke-RestMethod `
         -Uri         $dashboardUpdatesUrl `
         -Method      POST `
-        -ContentType 'application/json' `
+        -ContentType 'application/json; charset=utf-8' `
         -Headers     $headers `
         -Body        $revertJson `
         -ErrorAction Stop

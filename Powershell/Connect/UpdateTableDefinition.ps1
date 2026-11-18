@@ -67,7 +67,7 @@ if (-not (Test-Path -Path $TableDefinitionJsonPath -PathType Leaf)) {
 # Post the table definition JSON
 # ---------------------------------------------------------------------------
 $tableDefinitionUrl  = "$BaseUrl/$DataViewName/TableDefinitions/$TableDefinitionId/Updates"
-$tableDefinitionJson = Get-Content -Path $TableDefinitionJsonPath -Raw
+$tableDefinitionJson = Get-Content -Path $TableDefinitionJsonPath -Raw -Encoding UTF8
  
 Write-Host "Posting table definition JSON from '$TableDefinitionJsonPath' to '$tableDefinitionUrl'..." -ForegroundColor Cyan
  
@@ -79,7 +79,7 @@ try {
     $tableDefinitionResponse = Invoke-RestMethod `
         -Uri         $tableDefinitionUrl `
         -Method      POST `
-        -ContentType 'application/json' `
+        -ContentType 'application/json; charset=utf-8' `
         -Headers     $headers `
         -Body        $tableDefinitionJson `
         -ErrorAction Stop
