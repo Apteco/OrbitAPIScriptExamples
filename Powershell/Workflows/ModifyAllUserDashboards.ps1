@@ -57,9 +57,12 @@ param (
 $scripts = Split-Path -Parent $PSScriptRoot
 
 # Match whole JSON string values only, so the text isn't replaced inside
-# field names or longer strings
-$findPattern = '"' + [regex]::Escape($FindText) + '"'
-$replacement = '"' + $ReplaceText.Replace('$', '$$') + '"'
+# field names or longer strings. Both strings are encoded with ConvertTo-Json,
+# the same serialiser that produced the dashboard JSON, so special characters
+# (quotes, backslashes, tabs, and < > & ' in Windows PowerShell) are escaped
+# the same way. ConvertTo-Json also adds the surrounding quotes.
+$findPattern = [regex]::Escape((ConvertTo-Json -InputObject $FindText))
+$replacement = (ConvertTo-Json -InputObject $ReplaceText).Replace('$', '$$')
 
 # ---------------------------------------------------------------------------
 # Step 1: Log in and get an access token
