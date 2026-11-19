@@ -49,9 +49,11 @@ The page links to the API's JSON definition, at `/swagger/v2/swagger.json`. AI t
 ```
 > cd .\Powershell
 
-> $token = .\Login.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -Username administrator
+> $token = .\Login.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -Username myuser
 Enter password: *******
 ```
+
+If your user has multi-factor authentication (MFA) turned on, the script then asks for the 6-digit code from your authenticator app. The code changes every 30 seconds, so scripts can't log in as that user unattended.
 
 ## 5. Make your first call
 
@@ -59,7 +61,7 @@ Pass the token to another script with `-AccessToken`. For example, list the dash
 
 ```
 > .\Dashboards\ListDashboards.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -AccessToken $token
-Getting dashboards for user administrator...
+Getting dashboards for user myuser...
 1: Summary Dashboard - Spring Campaign
 3: Customer Instant Insights
 4: Impact Report Last Month
@@ -67,6 +69,15 @@ Got 3 dashboards
 ```
 
 To check that the APIs are running and can reach their databases and services, run `HealthCheck.ps1`.
+
+## Keep your credentials safe
+
+Anyone with your password or access token has the same access to Orbit as you.
+
+- Let `Login.ps1` ask for your password rather than passing it with `-Password`. PowerShell can save the commands you type to a history file, password included.
+- Keep the access token in a variable, as in step 4. Without one, `Login.ps1` prints the token on screen. Don't paste it into script files, shared documents, or AI tools.
+- Use `https://` base URLs only. Over `http://`, your password and token are sent unencrypted.
+- Log in as a user with only the access a script needs. Keep OrbitAdmin users for the scripts that need that role.
 
 ## Next steps
 
