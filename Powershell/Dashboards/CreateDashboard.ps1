@@ -15,7 +15,7 @@
     A valid access token (gained from the Login.ps1 script) to authenticate with.
 
 .PARAMETER SystemName
-    The name of the system (within the Data View) to create the dashboard in.
+    The name of the system (within the DataView) to create the dashboard in.
 
 .PARAMETER DashboardJsonPath
     The path to the JSON file to post to the Dashboards endpoint.

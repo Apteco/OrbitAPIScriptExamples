@@ -1,19 +1,19 @@
 # Orbit API Script Examples
 A library of scripting examples to show some of the things that can be done with the Orbit API.
 
-These scripts could be useful for automating administrative tasks within the Orbit platform.  For example:
+These scripts could be useful for automating administrative tasks within the Orbit platform. For example:
 
 - 🧑‍🎨 Change the theme on one or more dashboards 
 - ⬅️ Revert back to a previous save on one or more dashboards
 - ✏️ Programmatically modify one or more dashboards
 - 👤 Transfer the ownership of one or more dashboards
-- ...
+- And more, listed below
 
 All of these things can be done via the Orbit API, but by automating things these tasks can be done more quickly/consistently.
 
 ## Prerequisites
 
-All the scripts are written in PowerShell and should work with PowerShell 4+, against Orbit API 2.3.10 or later.  They generally require a valid access token. Use `Login.ps1` to obtain one before running any other script. If the user has multi-factor authentication (MFA) turned on, `Login.ps1` also asks for the 6-digit code from their authenticator app.
+All the scripts are written in PowerShell and should work with PowerShell 4+, against Orbit API 2.3.10 or later. They generally require a valid access token. Use `Login.ps1` to obtain one before running any other script. If the user has multi-factor authentication (MFA) turned on, `Login.ps1` also asks for the 6-digit code from their authenticator app.
 
 New to the Orbit API? Start with [docs/getting-started.md](docs/getting-started.md).
 
@@ -37,22 +37,22 @@ There are some simple single-step scripts that perform a simple action (in one o
 
 For examples of how some of the simple scripts could be combined to perform more complex actions, see [docs/combining-scripts.md](docs/combining-scripts.md).
 
-For example prompts that can be used with AI tools to produce similar scripts for other tasks see [docs/ai-prompt-ideas.md](docs/ai-prompt-ideas.md).  NOTE: Any generated scripts should be checked thoroughly before being run as AI can produce incorrect/dangerous results.
+For example prompts that can be used with AI tools to produce similar scripts for other tasks see [docs/ai-prompt-ideas.md](docs/ai-prompt-ideas.md). NOTE: Any generated scripts should be checked thoroughly before being run as AI can produce incorrect/dangerous results.
 
 ## What even is the Orbit API?
 
-The Orbit API is a RESTful API that provides the functionality for the Orbit platform, connecting to the rest of the Apteco software.  It can be used programmatically to achieve everything you can do via the Orbit UI.  For more details, see [docs/orbit-api-overview.md](docs/orbit-api-overview.md).
+The Orbit API is a RESTful API that provides the functionality for the Orbit platform, connecting to the rest of the Apteco software. It can be used programmatically to achieve everything you can do via the Orbit UI. For more details, see [docs/orbit-api-overview.md](docs/orbit-api-overview.md).
 
 ## Disclaimer
 
 > [!WARNING]
-> These scripts are provided as examples only. They are not officially supported and are intended as a starting point for your own automation. No warranty is given as to their correctness or fitness for any particular purpose.
+> These scripts are provided as examples only. They aren't officially supported and are intended as a starting point for your own automation. No warranty is given as to their correctness or fitness for any particular purpose.
 >
 > Always test scripts in a non-production environment before running them against live systems. Some of these scripts may make destructive or irreversible changes (such as creating, updating or deleting definitions), so review each script carefully before use.
 
 ## Scripts
 
-Each script has documentation at the top of the script.  Each script is also standalone and doesn't require custom modules or third-party dependencies to run.
+Each script has documentation at the top of the script. Each script is also standalone and doesn't require custom modules or third-party dependencies to run.
 
 ### Authentication
 
@@ -78,7 +78,7 @@ Each script has documentation at the top of the script.  Each script is also sta
 |--------|----------|
 | [ListDashboards.ps1](Powershell/Dashboards/ListDashboards.ps1) | Lists all dashboards in a DataView that are owned by the authenticated user. |
 | [ListAllDashboards.ps1](Powershell/Dashboards/ListAllDashboards.ps1) | Lists all dashboards in a DataView across all users (requires admin access). |
-| [GetDashboard.ps1](Powershell/Dashboards/GetDashboard.ps1) | Retrieves details of a specific dashboard as JSON, although not full details of the items in the dashboard.  These can be looked up with the `lastUpdateId` in combination with the `GetDashboardUpdate.ps1` script. |
+| [GetDashboard.ps1](Powershell/Dashboards/GetDashboard.ps1) | Retrieves details of a specific dashboard as JSON, although not full details of the items in the dashboard. These can be looked up with the `lastUpdateId` in combination with the `GetDashboardUpdate.ps1` script. |
 | [CreateDashboard.ps1](Powershell/Dashboards/CreateDashboard.ps1) | Creates a new dashboard by posting a JSON definition file to the API. |
 | [UpdateDashboard.ps1](Powershell/Dashboards/UpdateDashboard.ps1) | Updates an existing dashboard by posting a JSON definition file to the dashboard's Updates endpoint. |
 | [ListDashboardUpdates.ps1](Powershell/Dashboards/ListDashboardUpdates.ps1) | Lists the full update history for a specific dashboard. |

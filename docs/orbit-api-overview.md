@@ -83,7 +83,7 @@ A series of endpoints that allow for getting information on users within Data Vi
 
 | Method   | Path | Description |
 |----------|------|-------------|
-| `GET`    | `/Users/{username}/ResourceCounts` | Get a count of all resources (audiences, dashboards, collections, etc.) owned by a user |
+| `GET`    | `/Users/{username}/ResourceCounts` | Get a count of the resources a user owns, such as audiences, dashboards, and collections |
 | `PUT`    | `/Users/ResourcesTransferOwnership` | Transfer all resources owned by one user to another user |
 | `GET`    | `/Users/{username}/Audiences` | List audiences owned by a user |
 | `POST`   | `/Users/{username}/Audiences/Modify` | Update one or more audiences for a user |
