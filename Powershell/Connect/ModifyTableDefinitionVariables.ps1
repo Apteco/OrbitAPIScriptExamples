@@ -1,15 +1,14 @@
 <#
 .SYNOPSIS
-    Updates variable details across all user-defined table definitions based on a
-    spec file.
+    Updates variables across all user-defined table definitions, based on a JSON specification file.
 
 .DESCRIPTION
-    Reads a JSON spec file describing variable changes, fetches all user-defined
+    Reads a JSON specification file describing variable changes, fetches all user-defined
     table definitions from the Connect API, applies the specified variable changes
     to any matching variables, then posts an update for each table definition that
     was modified.
 
-    The spec file must have the following structure:
+    The specification file must have the following structure:
 
     {
         "variable_mapping": [
@@ -32,10 +31,10 @@
     are left unchanged on the variable.
 
 .PARAMETER BaseUrl
-    The base URL of the Connect API, e.g. https://example.com/holidays/OrbitConnectAPI
+    The base URL of the Connect API, for example https://example.com/holidays/OrbitConnectAPI
 
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
 
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.
@@ -82,7 +81,7 @@ if (-not (Test-Path $SpecFile)) {
     Stop-WithError "Spec file not found: $SpecFile"
 }
 
-$spec = Get-Content $SpecFile -Raw | ConvertFrom-Json
+$spec = Get-Content $SpecFile -Raw -Encoding UTF8 | ConvertFrom-Json
 $variableMapping = $spec.variable_mapping
 
 if (-not $variableMapping -or @($variableMapping).Count -eq 0) {
@@ -219,7 +218,7 @@ foreach ($detail in $allDetails) {
         $updateResponse = Invoke-RestMethod `
             -Uri         "${tableDefinitionsUrl}/$($detail.id)/Updates" `
             -Method      POST `
-            -ContentType 'application/json' `
+            -ContentType 'application/json; charset=utf-8' `
             -Headers     $headers `
             -Body        $updateJson `
             -ErrorAction Stop

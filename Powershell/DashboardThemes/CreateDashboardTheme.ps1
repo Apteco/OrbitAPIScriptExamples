@@ -1,15 +1,15 @@
 <#
 .SYNOPSIS
-    Posts a dashboard theme JSON file to the Apteco Orbit API.
+    Creates a dashboard theme from a JSON definition file.
  
 .DESCRIPTION
     Uses a valid access token to POST a JSON file to /{dataViewName}/Themes.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
  
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
  
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.
@@ -60,7 +60,7 @@ if (-not (Test-Path -Path $ThemeJsonPath -PathType Leaf)) {
 # Post the theme JSON
 # ---------------------------------------------------------------------------
 $themeUrl  = "$BaseUrl/$DataViewName/Themes"
-$themeJson = Get-Content -Path $ThemeJsonPath -Raw
+$themeJson = Get-Content -Path $ThemeJsonPath -Raw -Encoding UTF8
  
 Write-Host "Posting theme JSON from '$ThemeJsonPath' to '$themeUrl'..." -ForegroundColor Cyan
  
@@ -72,7 +72,7 @@ try {
     $themeResponse = Invoke-RestMethod `
         -Uri         $themeUrl `
         -Method      POST `
-        -ContentType 'application/json' `
+        -ContentType 'application/json; charset=utf-8' `
         -Headers     $headers `
         -Body        $themeJson `
         -ErrorAction Stop

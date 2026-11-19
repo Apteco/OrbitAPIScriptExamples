@@ -1,15 +1,17 @@
 <#
 .SYNOPSIS
-    Gets the latest version of a specific dashboard.  Note that this doesn't include the details of the items in the dashboard.
+    Gets a summary of the latest version of a dashboard.
  
 .DESCRIPTION
     Uses a valid access token to GET the latest dashboard update from /{dataViewName}/Users/{username}/Dashboards/{dashboardId}.
+
+    This summary doesn't include the details of the items in the dashboard. To get those, pass its lastUpdateId to GetDashboardUpdate.ps1.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
  
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
  
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.

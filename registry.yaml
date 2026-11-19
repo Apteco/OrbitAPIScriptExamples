@@ -1,0 +1,215 @@
+# Registry of the scripts in this repository.
+#
+# The Apteco Help Hub (help.apteco.com) builds its Orbit API cookbook from this
+# file: one page per entry, using the script's own comment-based help
+# (.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE) for the content.
+#
+# To add a script: write it with comment-based help, then add an entry below.
+#
+# authors:    keyed by GitHub username
+# categories: each category's colour on the Help Hub (teal, blue, purple,
+#             amber, green, or pink). Every tag a script uses must be listed.
+# requires:   shown on every script unless an entry sets its own
+#
+# Per script:
+#   slug:    the page name on the Help Hub (lowercase, hyphens)
+#   title:   a short, task-focused title
+#   script:  path to the script in this repository
+#   authors: GitHub usernames, from the authors list
+#   tags:    one or more categories
+#   kind:    single-step (one or two API calls) or multi-step
+#   api:     which API or APIs the script calls
+#   role:    optional, the Orbit role the script needs
+
+authors:
+  csuhj:
+    name: Adam Robertson
+
+categories:
+  Authentication: teal
+  Connect: purple
+  Dashboards: blue
+  Dashboard themes: amber
+  Health checks: green
+
+requires: Orbit API 2.3.10 or later
+
+scripts:
+  # Authentication and health checks
+  - slug: login
+    title: Log in and get an access token
+    script: Powershell/Login.ps1
+    authors: [csuhj]
+    tags: [Authentication]
+    kind: single-step
+    api: Orbit API
+
+  - slug: health-check
+    title: Check your Orbit services are healthy
+    script: Powershell/HealthCheck.ps1
+    authors: [csuhj]
+    tags: [Health checks]
+    kind: multi-step
+    api: Orbit API, Connect API, Chat API
+
+  # Dashboards
+  - slug: list-dashboards
+    title: List your dashboards
+    script: Powershell/Dashboards/ListDashboards.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: single-step
+    api: Orbit API
+
+  - slug: list-all-dashboards
+    title: List every dashboard in a DataView
+    script: Powershell/Dashboards/ListAllDashboards.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: single-step
+    api: Orbit API
+    role: OrbitAdmin
+
+  - slug: get-dashboard
+    title: Get a dashboard summary
+    script: Powershell/Dashboards/GetDashboard.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: single-step
+    api: Orbit API
+
+  - slug: list-dashboard-updates
+    title: List a dashboard's version history
+    script: Powershell/Dashboards/ListDashboardUpdates.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: single-step
+    api: Orbit API
+
+  - slug: get-dashboard-update
+    title: Get a specific version of a dashboard
+    script: Powershell/Dashboards/GetDashboardUpdate.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: single-step
+    api: Orbit API
+
+  - slug: create-dashboard
+    title: Create a dashboard from a JSON definition
+    script: Powershell/Dashboards/CreateDashboard.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: single-step
+    api: Orbit API
+
+  - slug: update-dashboard
+    title: Update a dashboard from a JSON definition
+    script: Powershell/Dashboards/UpdateDashboard.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: single-step
+    api: Orbit API
+
+  - slug: transfer-dashboard
+    title: Transfer a dashboard to another user
+    script: Powershell/Dashboards/TransferDashboard.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: single-step
+    api: Orbit API
+
+  - slug: revert-dashboard
+    title: Revert a dashboard to an earlier version
+    script: Powershell/Dashboards/RevertToPreviousUpdate.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: multi-step
+    api: Orbit API
+
+  - slug: modify-all-user-dashboards
+    title: Find and replace text across all your dashboards
+    script: Powershell/Workflows/ModifyAllUserDashboards.ps1
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: multi-step
+    api: Orbit API
+
+  # Dashboard themes
+  - slug: list-dashboard-themes
+    title: List dashboard themes
+    script: Powershell/DashboardThemes/ListDashboardThemes.ps1
+    authors: [csuhj]
+    tags: [Dashboard themes]
+    kind: single-step
+    api: Orbit API
+
+  - slug: get-dashboard-theme
+    title: Get a dashboard theme
+    script: Powershell/DashboardThemes/GetDashboardTheme.ps1
+    authors: [csuhj]
+    tags: [Dashboard themes]
+    kind: single-step
+    api: Orbit API
+
+  - slug: create-dashboard-theme
+    title: Create a dashboard theme
+    script: Powershell/DashboardThemes/CreateDashboardTheme.ps1
+    authors: [csuhj]
+    tags: [Dashboard themes]
+    kind: single-step
+    api: Orbit API
+    role: OrbitAdmin
+
+  - slug: update-dashboard-theme
+    title: Update a dashboard theme
+    script: Powershell/DashboardThemes/UpdateDashboardTheme.ps1
+    authors: [csuhj]
+    tags: [Dashboard themes]
+    kind: single-step
+    api: Orbit API
+    role: OrbitAdmin
+
+  - slug: set-dashboard-theme
+    title: Apply a theme to a dashboard
+    script: Powershell/Workflows/SetDashboardTheme.ps1
+    authors: [csuhj]
+    tags: [Dashboards, Dashboard themes]
+    kind: multi-step
+    api: Orbit API
+
+  # Connect table definitions
+  - slug: list-table-definitions
+    title: List Connect table definitions
+    script: Powershell/Connect/ListTableDefinitions.ps1
+    authors: [csuhj]
+    tags: [Connect]
+    kind: single-step
+    api: Connect API
+    role: OrbitAdmin
+
+  - slug: get-table-definition
+    title: Get a Connect table definition
+    script: Powershell/Connect/GetTableDefinition.ps1
+    authors: [csuhj]
+    tags: [Connect]
+    kind: single-step
+    api: Connect API
+    role: OrbitAdmin
+
+  - slug: update-table-definition
+    title: Update a Connect table definition
+    script: Powershell/Connect/UpdateTableDefinition.ps1
+    authors: [csuhj]
+    tags: [Connect]
+    kind: single-step
+    api: Connect API
+    role: OrbitAdmin
+
+  - slug: modify-table-definition-variables
+    title: Update variables across Connect table definitions
+    script: Powershell/Connect/ModifyTableDefinitionVariables.ps1
+    authors: [csuhj]
+    tags: [Connect]
+    kind: multi-step
+    api: Connect API
+    role: OrbitAdmin

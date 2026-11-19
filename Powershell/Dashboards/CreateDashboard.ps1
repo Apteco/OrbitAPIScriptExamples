@@ -1,21 +1,21 @@
 <#
 .SYNOPSIS
-    Posts a dashboard JSON file to the Apteco Orbit API.
+    Creates a dashboard from a JSON definition file.
  
 .DESCRIPTION
     Uses a valid access token to POST a JSON file to /{dataViewName}/Dashboards.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, e.g. https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
  
 .PARAMETER DataViewName
-    The name of the DataView to act on, e.g. "holidays"
+    The name of the DataView to act on, for example "holidays"
  
 .PARAMETER AccessToken
     A valid access token (gained from the Login.ps1 script) to authenticate with.
 
 .PARAMETER SystemName
-    The name of the system (within the Data View) to create the dashboard in.
+    The name of the system (within the DataView) to create the dashboard in.
 
 .PARAMETER DashboardJsonPath
     The path to the JSON file to post to the Dashboards endpoint.
@@ -85,7 +85,7 @@ if (-not (Test-Path -Path $DashboardJsonPath -PathType Leaf)) {
 # Post the dashboard JSON
 # ---------------------------------------------------------------------------
 $dashboardUrl  = "$BaseUrl/$DataViewName/Dashboards"
-$dashboardJson = Get-Content -Path $DashboardJsonPath -Raw
+$dashboardJson = Get-Content -Path $DashboardJsonPath -Raw -Encoding UTF8
 
 $dashboardToCreate = ConvertFrom-Json -InputObject $dashboardJson
 UpsertPropertyValue -Obj $dashboardToCreate -PropertyName 'systemName' -PropertyValue $SystemName
@@ -101,7 +101,7 @@ try {
     $dashboardResponse = Invoke-RestMethod `
         -Uri         $dashboardUrl `
         -Method      POST `
-        -ContentType 'application/json' `
+        -ContentType 'application/json; charset=utf-8' `
         -Headers     $headers `
         -Body        $dashboardJson `
         -ErrorAction Stop
