@@ -51,7 +51,6 @@ A series of endpoints that allow for session management, including logging in an
 | Method   | Path | Description |
 |----------|------|-------------|
 | `POST`   | `/Sessions/SimpleLogin` | Creates a session using a plain username and password |
-| `POST`   | `/Sessions/ConvertSession` | Converts a legacy FastStats session ID into an API access token |
 | `GET`    | `/Sessions/{sessionId}` | Gets basic user details for a given session |
 | `GET`    | `/Sessions/{sessionId}/Valid` | Checks whether a given session ID is still valid |
 | `DELETE` | `/Sessions/{sessionId}` | Logs out and invalidates the specified session |
