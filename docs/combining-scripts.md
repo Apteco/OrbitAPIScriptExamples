@@ -40,11 +40,11 @@ In this example the given steps are followed:
 ```
 > cd .\Powershell
 
-> $token=.\Login.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -Username administrator
+> $token=.\Login.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -Username myuser
 Enter password: *******
 
 > .\Dashboards\ListDashboards.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -AccessToken $token
-Getting dashboards for user administrator...
+Getting dashboards for user myuser...
 1: Summary Dashboard - Spring Campaign
 3: Customer Instant Insights
 4: Impact Report Last Month
@@ -52,10 +52,10 @@ Got 3 dashboards
 
 > .\Dashboards\ListDashboardUpdates.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -AccessToken $token -DashboardId 3
 Getting dashboard updates for dashboard 3...
-01/01/2026 09:00:00 (update 101): Dashboard 'Customer Instant Insights' updated by administrator
-01/01/2026 10:00:00 (update 102): Dashboard 'Customer Instant Insights' updated by administrator
-02/01/2026 09:00:00 (update 103): Dashboard 'Customer Instant Insights' updated by administrator
-03/01/2026 11:30:00 (update 104): Dashboard 'Customer Instant Insights' updated by administrator
+01/01/2026 09:00:00 (update 101): Dashboard 'Customer Instant Insights' updated by myuser
+01/01/2026 10:00:00 (update 102): Dashboard 'Customer Instant Insights' updated by myuser
+02/01/2026 09:00:00 (update 103): Dashboard 'Customer Instant Insights' updated by myuser
+03/01/2026 11:30:00 (update 104): Dashboard 'Customer Instant Insights' updated by myuser
 Got 4 dashboard updates
 
 > .\Dashboards\GetDashboardUpdate.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -AccessToken $token -DashboardId 3 -DashboardUpdateId 103 > C:\temp\dashboard-definition.json
@@ -100,15 +100,15 @@ In this example the given steps are followed.  It is assumed that we already kno
 ```
 > cd .\Powershell
 
-> $token=.\Login.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -Username administrator
+> $token=.\Login.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -Username myuser
 Enter password: *******
 
 > .\Dashboards\ListDashboardUpdates.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -AccessToken $token -DashboardId 42
 Getting dashboard updates for dashboard 42...
-01/01/2026 09:00:00 (update 101): Dashboard 'Life, the universe and everything' updated by administrator
-01/01/2026 10:00:00 (update 102): Dashboard 'Life, the universe and everything' updated by administrator
-02/01/2026 09:00:00 (update 103): Dashboard 'Life, the universe and everything' updated by administrator
-03/01/2026 11:30:00 (update 104): Dashboard 'Life, the universe and everything' updated by administrator
+01/01/2026 09:00:00 (update 101): Dashboard 'Life, the universe and everything' updated by myuser
+01/01/2026 10:00:00 (update 102): Dashboard 'Life, the universe and everything' updated by myuser
+02/01/2026 09:00:00 (update 103): Dashboard 'Life, the universe and everything' updated by myuser
+03/01/2026 11:30:00 (update 104): Dashboard 'Life, the universe and everything' updated by myuser
 Got 4 dashboard updates
 
 > .\Dashboards\GetDashboardUpdate.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -AccessToken $token -DashboardId 42 -DashboardUpdateId 103 > C:\temp\dashboard-definition.json
@@ -166,13 +166,13 @@ The full script is [`Powershell/Workflows/ModifyAllUserDashboards.ps1`](../Power
 > .\Workflows\ModifyAllUserDashboards.ps1 `
       -BaseUrl "https://example.com/OrbitAPI" `
       -DataViewName "holidays" `
-      -Username "administrator" `
+      -Username "myuser" `
       -FindText "Spring Campaign" `
       -ReplaceText "Summer Campaign"
 
-Authenticating as 'administrator' against '...'...
+Authenticating as 'myuser' against '...'...
 Login successful. Access token obtained.
-Getting dashboards for user administrator...
+Getting dashboards for user myuser...
 Got 3 dashboards
 3 dashboard(s) found. Processing...
   [1] Summary Dashboard - Spring Campaign - no match, skipping.
@@ -238,16 +238,16 @@ The full script is [`Powershell/Workflows/SetDashboardTheme.ps1`](../Powershell/
 > .\Workflows\SetDashboardTheme.ps1 `
       -BaseUrl      "https://example.com/OrbitAPI" `
       -DataViewName "holidays" `
-      -Username     "administrator" `
+      -Username     "myuser" `
       -DashboardId  42 `
       -ThemeName    "Corporate Blue"
 
-Authenticating as 'administrator' against '...'...
+Authenticating as 'myuser' against '...'...
 Login successful. Access token obtained.
 Getting dashboard themes...
 Got 3 dashboard themes
 Found theme 'Corporate Blue' with id 7.
-Getting dashboard 42 for user administrator...
+Getting dashboard 42 for user myuser...
 Got dashboard 42: Impact Report Last Month
 Getting dashboard update 91 for dashboard 42...
 Got dashboard update 91 for dashboard 42: Impact Report Last Month

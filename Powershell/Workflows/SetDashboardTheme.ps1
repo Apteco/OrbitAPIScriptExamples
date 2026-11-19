@@ -29,7 +29,7 @@
     .\Workflows\SetDashboardTheme.ps1 `
         -BaseUrl      "https://example.com/OrbitAPI" `
         -DataViewName "holidays" `
-        -Username     "administrator" `
+        -Username     "myuser" `
         -DashboardId  42 `
         -ThemeName    "Corporate Blue"
 #>

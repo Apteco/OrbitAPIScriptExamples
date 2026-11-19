@@ -31,7 +31,7 @@
     .\Workflows\ModifyAllUserDashboards.ps1 `
         -BaseUrl "https://example.com/OrbitAPI" `
         -DataViewName "holidays" `
-        -Username "administrator" `
+        -Username "myuser" `
         -FindText "Spring Campaign" `
         -ReplaceText "Summer Campaign"
 #>

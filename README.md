@@ -20,11 +20,11 @@ New to the Orbit API? Start with [docs/getting-started.md](docs/getting-started.
 ```
 > cd .\Powershell
 
-> $token=.\Login.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -Username administrator
+> $token=.\Login.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -Username myuser
 Enter password: *******
 
 > .\Dashboards\ListDashboards.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -AccessToken $token
-Getting dashboards for user administrator...
+Getting dashboards for user myuser...
 1: Summary Dashboard - Spring Campaign
 3: Customer Instant Insights
 4: Impact Report Last Month
