@@ -13,7 +13,7 @@ All of these things can be done via the Orbit API, but by automating things thes
 
 ## Prerequisites
 
-All the scripts are written in PowerShell and should work with PowerShell 4+, against Orbit API 2.3.10 or later.  They generally require a valid access token. Use `Login.ps1` to obtain one before running any other script.
+All the scripts are written in PowerShell and should work with PowerShell 4+, against Orbit API 2.3.10 or later.  They generally require a valid access token. Use `Login.ps1` to obtain one before running any other script. If the user has multi-factor authentication (MFA) turned on, `Login.ps1` also asks for the 6-digit code from their authenticator app.
 
 New to the Orbit API? Start with [docs/getting-started.md](docs/getting-started.md).
 
