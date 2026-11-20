@@ -45,7 +45,7 @@ Keep each pull request to one script or walkthrough, and in its description say:
 - what the script does, and why it's useful
 - how you tested it, including the Orbit version you tested against
 
-Every pull request is reviewed before it's merged. Once it's merged, your script appears on the Help Hub the next time the cookbook is updated.
+We review every pull request, but can't promise to merge every one. Once yours is merged, your script appears on the Help Hub the next time the cookbook is updated.
 
 ## Report a security problem
 
