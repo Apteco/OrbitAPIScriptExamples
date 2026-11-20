@@ -40,7 +40,7 @@ Pass the right base URL to each script, usually with its `-BaseUrl` parameter. T
 
 Add `/swagger/ui` to your Orbit API URL (for example `https://example.com/OrbitAPI/swagger/ui`) to browse every endpoint.
 
-The page links to the API's JSON definition, at `/swagger/v2/swagger.json`. AI tools can use it to help you write new scripts. See [AI prompt ideas](ai-prompt-ideas.md).
+The page links to the API's JSON definition, at `/swagger/v2/swagger.json`. AI tools can use it to help you write new scripts. See [Using AI tools](ai-prompt-ideas.md).
 
 ## Log in
 
@@ -83,7 +83,7 @@ Anyone with your password or access token has the same access to Orbit as you.
 
 - [Orbit API overview](orbit-api-overview.md): how the Orbit API works, with its key endpoints
 - [All scripts](../README.md): every script, and walkthroughs that combine them
-- [AI prompt ideas](ai-prompt-ideas.md): using AI tools to write new scripts
+- [Using AI tools](ai-prompt-ideas.md): writing new scripts with an AI tool
 
 > [!WARNING]
 > These scripts are examples only, and aren't officially supported. Test them on a non-production system before you run them against live data.

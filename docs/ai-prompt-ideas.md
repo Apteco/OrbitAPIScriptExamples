@@ -25,6 +25,8 @@ These come from people who have built tools on the Orbit API this way.
 
 ## Example prompts
 
+Each of these prompts asks an AI tool to write a new script, using the example scripts as a pattern.
+
 ### Transfer audience ownership
 
 With a coding agent such as Claude Code (replace the example URL with your own):
