@@ -82,8 +82,7 @@ Anyone with your password or access token has the same access to Orbit as you.
 ## Next steps
 
 - [Orbit API overview](orbit-api-overview.md): how the Orbit API works, with its key endpoints
-- [README](../README.md): every script in this repository
-- [Combining scripts](combining-scripts.md): worked examples of using scripts together
+- [All scripts](../README.md): every script, and walkthroughs that combine them
 - [AI prompt ideas](ai-prompt-ideas.md): using AI tools to write new scripts
 
 > [!WARNING]

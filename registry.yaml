@@ -1,25 +1,29 @@
-# Registry of the scripts in this repository.
+# Registry of the scripts and walkthroughs in this repository.
 #
 # The Apteco Help Hub (help.apteco.com) builds its Orbit API cookbook from this
-# file: one page per entry, using the script's own comment-based help
-# (.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE) for the content.
+# file: one page per entry. A script's page comes from its own comment-based
+# help (.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE); a walkthrough's page
+# comes from its Markdown file in docs/walkthroughs.
 #
 # To add a script: write it with comment-based help, then add an entry below.
+# To add a walkthrough: see docs/walkthroughs/README.md.
 #
 # authors:    keyed by GitHub username
 # categories: each category's colour on the Help Hub (teal, blue, purple,
 #             amber, green, or pink). Every tag a script uses must be listed.
-# requires:   shown on every script unless an entry sets its own
+# requires:   the minimum version for every script; an entry can set its own
 #
-# Per script:
-#   slug:    the page name on the Help Hub (lowercase, hyphens)
-#   title:   a short, task-focused title
-#   script:  path to the script in this repository
-#   authors: GitHub usernames, from the authors list
-#   tags:    one or more categories
-#   kind:    single-step (one or two API calls) or multi-step
-#   api:     which API or APIs the script calls
-#   role:    optional, the Orbit role the script needs
+# Per entry:
+#   slug:        the page name on the Help Hub (lowercase, hyphens)
+#   title:       a short, task-focused title
+#   script:      path to the script in this repository
+#   doc:         instead of script, for a walkthrough with no script of its own
+#   walkthrough: optional, for a script in Powershell/Workflows: its walkthrough
+#   authors:     GitHub usernames, from the authors list
+#   tags:        one or more categories
+#   kind:        single-step (one or two API calls), multi-step, or walkthrough
+#   api:         which API or APIs the script calls
+#   role:        optional, the Orbit role the script needs
 
 authors:
   csuhj:
@@ -129,9 +133,26 @@ scripts:
   - slug: modify-all-user-dashboards
     title: Find and replace text across all your dashboards
     script: Powershell/Workflows/ModifyAllUserDashboards.ps1
+    walkthrough: docs/walkthroughs/modify-all-user-dashboards.md
     authors: [csuhj]
     tags: [Dashboards]
     kind: multi-step
+    api: Orbit API
+
+  - slug: copy-and-modify-a-dashboard
+    title: Create a modified copy of a dashboard
+    doc: docs/walkthroughs/copy-and-modify-a-dashboard.md
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: walkthrough
+    api: Orbit API
+
+  - slug: update-dashboard-tile-titles
+    title: Change the tile titles in a dashboard
+    doc: docs/walkthroughs/update-dashboard-tile-titles.md
+    authors: [csuhj]
+    tags: [Dashboards]
+    kind: walkthrough
     api: Orbit API
 
   # Dashboard themes
@@ -172,8 +193,9 @@ scripts:
   - slug: set-dashboard-theme
     title: Apply a theme to a dashboard
     script: Powershell/Workflows/SetDashboardTheme.ps1
+    walkthrough: docs/walkthroughs/set-dashboard-theme.md
     authors: [csuhj]
-    tags: [Dashboards, Dashboard themes]
+    tags: [Dashboard themes]
     kind: multi-step
     api: Orbit API
 

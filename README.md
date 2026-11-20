@@ -35,7 +35,7 @@ Got 3 dashboards
 
 There are some simple single-step scripts that perform a simple action (in one or two API calls), and other scripts that perform more complex tasks in multiple steps.
 
-For examples of how some of the simple scripts could be combined to perform more complex actions, see [docs/combining-scripts.md](docs/combining-scripts.md).
+For examples of how some of the simple scripts could be combined to perform more complex actions, see the [walkthroughs](docs/walkthroughs/README.md).
 
 For example prompts that can be used with AI tools to produce similar scripts for other tasks see [docs/ai-prompt-ideas.md](docs/ai-prompt-ideas.md). NOTE: Any generated scripts should be checked thoroughly before being run as AI can produce incorrect/dangerous results.
 
@@ -127,7 +127,7 @@ Each script has documentation at the top of the script. Each script is also stan
 
 ### Workflows  *(Orbit API)*
 
-Complete scripts that combine several of the scripts above. Run them from the `Powershell` folder. See [docs/combining-scripts.md](docs/combining-scripts.md) for walkthroughs.
+Complete scripts that combine several of the scripts above. Run them from the `Powershell` folder. Each has a [walkthrough](docs/walkthroughs/README.md) that explains how it works.
 
 | Script | Synopsis |
 |--------|----------|
@@ -138,5 +138,5 @@ Complete scripts that combine several of the scripts above. Run them from the `P
 
 1. Write the script with comment-based help at the top: `.SYNOPSIS` (a one-line summary), `.DESCRIPTION`, a `.PARAMETER` for each parameter, and at least one `.EXAMPLE`.
 2. Add it to the tables above.
-3. If it combines other scripts, put it in `Powershell/Workflows` and add a walkthrough to [docs/combining-scripts.md](docs/combining-scripts.md).
+3. If it combines other scripts, put it in `Powershell/Workflows` and add a walkthrough to [docs/walkthroughs](docs/walkthroughs/README.md).
 4. Add an entry for it to [registry.yaml](registry.yaml). The Apteco Help Hub builds a page for each script in the registry, using the script's comment-based help for the content.

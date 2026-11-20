@@ -33,4 +33,4 @@ Each script has documentation at the top of the script.  Each script is also sta
 
 ## Example usage
 
-Each of these scripts can be used in a number of ways.  See [docs/combining-scripts.md](../../docs/combining-scripts.md) for some examples of calling multiple scripts to achieve a larger result.
+Each of these scripts can be used in a number of ways. See the [walkthroughs](../../docs/walkthroughs/README.md) for examples of calling several scripts to do a bigger job.
