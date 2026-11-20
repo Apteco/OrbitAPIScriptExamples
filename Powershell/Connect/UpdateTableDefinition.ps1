@@ -6,7 +6,7 @@
     Uses a valid access token to POST a JSON file to /{dataViewName}/TableDefinitions/{tableDefinitionId}/Updates.
  
 .PARAMETER BaseUrl
-    The base URL of the Connect API, for example https://example.com/holidays/OrbitConnectAPI
+    The base URL of the Connect API, for example https://example.com/OrbitConnectAPI
  
 .PARAMETER DataViewName
     The name of the DataView to act on, for example "holidays"
@@ -22,7 +22,7 @@
 
 .EXAMPLE
     .\UpdateTableDefinition.ps1 `
-        -BaseUrl "https://example.com/holidays/OrbitConnectAPI" `
+        -BaseUrl "https://example.com/OrbitConnectAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `
         -TableDefinitionId 12345 `

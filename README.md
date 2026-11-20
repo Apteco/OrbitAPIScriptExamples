@@ -35,7 +35,7 @@ Got 3 dashboards
 
 There are some simple single-step scripts that perform a simple action (in one or two API calls), and other scripts that perform more complex tasks in multiple steps.
 
-For examples of how some of the simple scripts could be combined to perform more complex actions, see [docs/combining-scripts.md](docs/combining-scripts.md).
+For examples of how some of the simple scripts could be combined to perform more complex actions, see the [walkthroughs](docs/walkthroughs/README.md).
 
 For example prompts that can be used with AI tools to produce similar scripts for other tasks see [docs/ai-prompt-ideas.md](docs/ai-prompt-ideas.md). NOTE: Any generated scripts should be checked thoroughly before being run as AI can produce incorrect/dangerous results.
 
@@ -76,7 +76,7 @@ Each script has documentation at the top of the script. Each script is also stan
 
 | Script | Synopsis |
 |--------|----------|
-| [ListDashboards.ps1](Powershell/Dashboards/ListDashboards.ps1) | Lists all dashboards in a DataView that are owned by the authenticated user. |
+| [ListDashboards.ps1](Powershell/Dashboards/ListDashboards.ps1) | Lists all dashboards in a DataView that the user can see, including ones shared with them. |
 | [ListAllDashboards.ps1](Powershell/Dashboards/ListAllDashboards.ps1) | Lists all dashboards in a DataView across all users (requires admin access). |
 | [GetDashboard.ps1](Powershell/Dashboards/GetDashboard.ps1) | Retrieves details of a specific dashboard as JSON, although not full details of the items in the dashboard. These can be looked up with the `lastUpdateId` in combination with the `GetDashboardUpdate.ps1` script. |
 | [CreateDashboard.ps1](Powershell/Dashboards/CreateDashboard.ps1) | Creates a new dashboard by posting a JSON definition file to the API. |
@@ -94,7 +94,7 @@ Each script has documentation at the top of the script. Each script is also stan
 
 ---
 
-### Dashboard Themes  *(Orbit API)*
+### Dashboard themes  *(Orbit API)*
 
 #### Simple single-step scripts
 
@@ -107,7 +107,7 @@ Each script has documentation at the top of the script. Each script is also stan
 
 ---
 
-### Table Definitions  *(Connect API)*
+### Table definitions  *(Connect API)*
 
 #### Simple single-step scripts
 
@@ -127,16 +127,13 @@ Each script has documentation at the top of the script. Each script is also stan
 
 ### Workflows  *(Orbit API)*
 
-Complete scripts that combine several of the scripts above. Run them from the `Powershell` folder. See [docs/combining-scripts.md](docs/combining-scripts.md) for walkthroughs.
+Complete scripts that combine several of the scripts above. Run them from the `Powershell` folder. Each has a [walkthrough](docs/walkthroughs/README.md) that explains how it works.
 
 | Script | Synopsis |
 |--------|----------|
-| [ModifyAllUserDashboards.ps1](Powershell/Workflows/ModifyAllUserDashboards.ps1) | Replaces a text value in every dashboard that belongs to the current user. |
+| [ModifyAllUserDashboards.ps1](Powershell/Workflows/ModifyAllUserDashboards.ps1) | Replaces a text value in every dashboard the current user can edit, including ones shared with them. |
 | [SetDashboardTheme.ps1](Powershell/Workflows/SetDashboardTheme.ps1) | Applies a named dashboard theme to a dashboard. |
 
-## Adding a script
+## Contributing
 
-1. Write the script with comment-based help at the top: `.SYNOPSIS` (a one-line summary), `.DESCRIPTION`, a `.PARAMETER` for each parameter, and at least one `.EXAMPLE`.
-2. Add it to the tables above.
-3. If it combines other scripts, put it in `Powershell/Workflows` and add a walkthrough to [docs/combining-scripts.md](docs/combining-scripts.md).
-4. Add an entry for it to [registry.yaml](registry.yaml). The Apteco Help Hub builds a page for each script in the registry, using the script's comment-based help for the content.
+New scripts and walkthroughs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add one.

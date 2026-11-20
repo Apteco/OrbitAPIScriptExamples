@@ -8,7 +8,7 @@ See the [disclaimer](../../README.md#disclaimer) in the main README.
 
 ## Scripts
 
-Each script has documentation at the top of the script.  Each script is also standalone and doesn't require custom modules or third-party dependencies to run.
+Each script has documentation at the top of the script. Each script is also standalone and doesn't require custom modules or third-party dependencies to run.
 
 **NOTE**: When calling these scripts you must provide the Orbit Connect API's URL for the `BaseUrl` parameter.
 
@@ -24,4 +24,4 @@ Each script has documentation at the top of the script.  Each script is also sta
 
 | Script | Synopsis |
 |--------|----------|
-| [ModifyTableDefinitionVariables.ps1](./ModifyTableDefinitionVariables.ps1) | Reads a JSON spec file describing variable changes, applies them across all matching user-defined table definitions, and posts an update for each modified definition (requires OrbitAdmin role). |
+| [ModifyTableDefinitionVariables.ps1](./ModifyTableDefinitionVariables.ps1) | Reads a JSON specification file describing variable changes, applies them across all matching user-defined table definitions, and posts an update for each modified definition (requires OrbitAdmin role). |

@@ -8,7 +8,7 @@ See the [disclaimer](../../README.md#disclaimer) in the main README.
 
 ## Scripts
 
-Each script has documentation at the top of the script.  Each script is also standalone and doesn't require custom modules or third-party dependencies to run.
+Each script has documentation at the top of the script. Each script is also standalone and doesn't require custom modules or third-party dependencies to run.
 
 #### Simple single-step scripts
 

@@ -8,7 +8,7 @@
     This summary doesn't include the details of the items in the dashboard. To get those, pass its lastUpdateId to GetDashboardUpdate.ps1.
  
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/OrbitAPI
  
 .PARAMETER DataViewName
     The name of the DataView to act on, for example "holidays"
@@ -21,7 +21,7 @@
 
 .EXAMPLE
     .\GetDashboard.ps1 `
-        -BaseUrl "https://example.com/holidays/OrbitAPI" `
+        -BaseUrl "https://example.com/OrbitAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `
         -DashboardId 1234
