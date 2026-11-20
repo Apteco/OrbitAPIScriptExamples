@@ -1,11 +1,11 @@
-# Replace text in all of a user's dashboards
+# Replace text in every dashboard you can edit
 
-How [ModifyAllUserDashboards.ps1](../../Powershell/Workflows/ModifyAllUserDashboards.ps1) chains five scripts to find and replace a text value across every dashboard that belongs to the current user. The same pattern works for any bulk dashboard change.
+How [ModifyAllUserDashboards.ps1](../../Powershell/Workflows/ModifyAllUserDashboards.ps1) chains five scripts to find and replace a text value across every dashboard the current user can edit, including ones shared with them. The same pattern works for any bulk dashboard change.
 
 ## Scripts used
 
 - [Login.ps1](../../Powershell/Login.ps1): get an access token
-- [ListDashboards.ps1](../../Powershell/Dashboards/ListDashboards.ps1): get the IDs of the user's dashboards
+- [ListDashboards.ps1](../../Powershell/Dashboards/ListDashboards.ps1): get the IDs of the dashboards the user can see
 - [GetDashboard.ps1](../../Powershell/Dashboards/GetDashboard.ps1): get each dashboard's details, including its `lastUpdateId`
 - [GetDashboardUpdate.ps1](../../Powershell/Dashboards/GetDashboardUpdate.ps1): get the full JSON definition of that update
 - [UpdateDashboard.ps1](../../Powershell/Dashboards/UpdateDashboard.ps1): save the modified definition as a new version of the dashboard
@@ -13,7 +13,7 @@ How [ModifyAllUserDashboards.ps1](../../Powershell/Workflows/ModifyAllUserDashbo
 ## How it works
 
 1. Log in and capture the access token.
-2. List all the user's dashboards, and parse the IDs from the output.
+2. List all the dashboards the user can see, including shared ones, and parse the IDs from the output.
 3. For each dashboard, call `GetDashboard.ps1` to get its summary. This includes `lastUpdateId`, which identifies the current version of the dashboard's definition.
 4. Call `GetDashboardUpdate.ps1` with that update ID to get the full JSON definition.
 5. Check whether `FindText` appears as a JSON string value, and skip the dashboard if not.
@@ -24,6 +24,9 @@ How [ModifyAllUserDashboards.ps1](../../Powershell/Workflows/ModifyAllUserDashbo
 > [!WARNING]
 > This script modifies dashboards in place. Test against a non-production system first,
 > and check the search string is specific enough that it only matches what you intend to change.
+>
+> It also changes dashboards that other users have shared with you, if you can edit them.
+> To limit what it can change, run it as a user who can edit only the dashboards you mean to update.
 
 ## Example output
 

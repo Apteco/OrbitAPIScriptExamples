@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Lists all dashboards in a DataView that the user has access to.
+    Lists all dashboards in a DataView that the user can see, including ones shared with them.
  
 .DESCRIPTION
     Uses a valid access token to GET the list of dashboards from /{dataViewName}/Users/{username}/Dashboards.

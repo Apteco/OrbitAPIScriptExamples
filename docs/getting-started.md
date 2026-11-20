@@ -57,7 +57,7 @@ If your user has multi-factor authentication (MFA) turned on, the script then as
 
 ## Make your first call
 
-Pass the token to another script with `-AccessToken`. For example, list the dashboards you own:
+Pass the token to another script with `-AccessToken`. For example, list the dashboards you can see:
 
 ```
 > .\Dashboards\ListDashboards.ps1 -BaseUrl https://example.com/OrbitAPI -DataViewName holidays -AccessToken $token

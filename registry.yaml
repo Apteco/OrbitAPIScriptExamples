@@ -131,7 +131,7 @@ scripts:
     api: Orbit API
 
   - slug: modify-all-user-dashboards
-    title: Find and replace text across all your dashboards
+    title: Find and replace text across every dashboard you can edit
     script: Powershell/Workflows/ModifyAllUserDashboards.ps1
     walkthrough: docs/walkthroughs/modify-all-user-dashboards.md
     authors: [csuhj]

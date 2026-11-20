@@ -1,12 +1,16 @@
 <#
 .SYNOPSIS
-    Replaces a text value in every dashboard that belongs to the current user.
+    Replaces a text value in every dashboard the current user can edit, including ones shared with them.
 
 .DESCRIPTION
-    Logs in, lists the user's dashboards, and fetches the latest definition of
+    Logs in, lists every dashboard the user can see, and fetches the latest definition of
     each one. Wherever the definition contains a JSON string value that exactly
     matches FindText, it replaces it with ReplaceText and saves the result as a
     new version of the dashboard. Dashboards without a match are skipped.
+
+    The list includes dashboards that other users have shared with this user, so
+    the script also changes any shared dashboard the user can edit. A dashboard
+    the user can only view can't be updated, and returns an error.
 
     This combines Login.ps1, ListDashboards.ps1, GetDashboard.ps1,
     GetDashboardUpdate.ps1, and UpdateDashboard.ps1. The same pattern works for
@@ -19,7 +23,7 @@
     The name of the DataView to act on, for example "holidays"
 
 .PARAMETER Username
-    The username to authenticate with, whose dashboards are modified.
+    The username to authenticate with. Every dashboard this user can edit is modified.
 
 .PARAMETER FindText
     The text value to find. Only JSON string values that match it exactly are replaced.

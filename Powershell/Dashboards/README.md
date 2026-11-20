@@ -14,7 +14,7 @@ Each script has documentation at the top of the script. Each script is also stan
 
 | Script | Synopsis |
 |--------|----------|
-| [ListDashboards.ps1](./ListDashboards.ps1) | Lists all dashboards in a DataView that are owned by the authenticated user. |
+| [ListDashboards.ps1](./ListDashboards.ps1) | Lists all dashboards in a DataView that the user can see, including ones shared with them. |
 | [ListAllDashboards.ps1](./ListAllDashboards.ps1) | Lists all dashboards in a DataView across all users (requires admin access). |
 | [GetDashboard.ps1](./GetDashboard.ps1) | Retrieves details of a specific dashboard as JSON, although not full details of the items in the dashboard. These can be looked up with the `lastUpdateId` in combination with the `GetDashboardUpdate.ps1` script. |
 | [CreateDashboard.ps1](./CreateDashboard.ps1) | Creates a new dashboard by posting a JSON definition file to the API. |

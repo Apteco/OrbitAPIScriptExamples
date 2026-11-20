@@ -76,7 +76,7 @@ Each script has documentation at the top of the script. Each script is also stan
 
 | Script | Synopsis |
 |--------|----------|
-| [ListDashboards.ps1](Powershell/Dashboards/ListDashboards.ps1) | Lists all dashboards in a DataView that are owned by the authenticated user. |
+| [ListDashboards.ps1](Powershell/Dashboards/ListDashboards.ps1) | Lists all dashboards in a DataView that the user can see, including ones shared with them. |
 | [ListAllDashboards.ps1](Powershell/Dashboards/ListAllDashboards.ps1) | Lists all dashboards in a DataView across all users (requires admin access). |
 | [GetDashboard.ps1](Powershell/Dashboards/GetDashboard.ps1) | Retrieves details of a specific dashboard as JSON, although not full details of the items in the dashboard. These can be looked up with the `lastUpdateId` in combination with the `GetDashboardUpdate.ps1` script. |
 | [CreateDashboard.ps1](Powershell/Dashboards/CreateDashboard.ps1) | Creates a new dashboard by posting a JSON definition file to the API. |
@@ -131,7 +131,7 @@ Complete scripts that combine several of the scripts above. Run them from the `P
 
 | Script | Synopsis |
 |--------|----------|
-| [ModifyAllUserDashboards.ps1](Powershell/Workflows/ModifyAllUserDashboards.ps1) | Replaces a text value in every dashboard that belongs to the current user. |
+| [ModifyAllUserDashboards.ps1](Powershell/Workflows/ModifyAllUserDashboards.ps1) | Replaces a text value in every dashboard the current user can edit, including ones shared with them. |
 | [SetDashboardTheme.ps1](Powershell/Workflows/SetDashboardTheme.ps1) | Applies a named dashboard theme to a dashboard. |
 
 ## Contributing
