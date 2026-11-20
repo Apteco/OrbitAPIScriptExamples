@@ -8,13 +8,13 @@
     and that it can reach its own dependencies (databases, FastStats services, Apteco AI proxy).
  
 .PARAMETER OrbitBaseUrl
-    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/OrbitAPI
 
 .PARAMETER ConnectBaseUrl
-    The base URL of the Connect API, for example https://example.com/holidays/OrbitConnectAPI. Can be omitted if Connect API checks aren't required.
+    The base URL of the Connect API, for example https://example.com/OrbitConnectAPI. Can be omitted if Connect API checks aren't required.
 
 .PARAMETER ChatBaseUrl
-    The base URL of the Chat API, for example https://example.com/holidays/ChatAPI. Can be omitted if Chat API checks aren't required.
+    The base URL of the Chat API, for example https://example.com/ChatAPI. Can be omitted if Chat API checks aren't required.
 
 .PARAMETER DataViewName
     The name of the DataView to act on, for example "holidays"
@@ -24,9 +24,9 @@
 
 .EXAMPLE
     .\HealthCheck.ps1 `
-        -OrbitBaseUrl "https://www.example.com/OrbitAPI" `
-        -ConnectBaseUrl "https://www.example.com/OrbitConnectAPI" `
-        -ChatBaseUrl "https://www.example.com/ChatAPI" `
+        -OrbitBaseUrl "https://example.com/OrbitAPI" `
+        -ConnectBaseUrl "https://example.com/OrbitConnectAPI" `
+        -ChatBaseUrl "https://example.com/ChatAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here"
 #>

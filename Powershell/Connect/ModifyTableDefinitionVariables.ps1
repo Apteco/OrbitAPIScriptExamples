@@ -31,7 +31,7 @@
     are left unchanged on the variable.
 
 .PARAMETER BaseUrl
-    The base URL of the Connect API, for example https://example.com/holidays/OrbitConnectAPI
+    The base URL of the Connect API, for example https://example.com/OrbitConnectAPI
 
 .PARAMETER DataViewName
     The name of the DataView to act on, for example "holidays"
@@ -44,7 +44,7 @@
 
 .EXAMPLE
     .\ModifyTableDefinitionVariables.ps1 `
-        -BaseUrl "https://example.com/holidays/OrbitConnectAPI" `
+        -BaseUrl "https://example.com/OrbitConnectAPI" `
         -DataViewName "holidays" `
         -AccessToken "your_access_token_here" `
         -SpecFile ".\table-definition-updates-spec.json"

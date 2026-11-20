@@ -13,7 +13,7 @@
     users with MFA turned on can't run this script unattended.
 
 .PARAMETER BaseUrl
-    The base URL of the Orbit API, for example https://example.com/holidays/OrbitAPI
+    The base URL of the Orbit API, for example https://example.com/OrbitAPI
  
 .PARAMETER DataViewName
     The name of the DataView to act on, for example "holidays"
@@ -30,7 +30,7 @@
 
 .EXAMPLE
     .\Login.ps1 `
-        -BaseUrl "https://www.example.com/OrbitAPI" `
+        -BaseUrl "https://example.com/OrbitAPI" `
         -DataViewName "holidays" `
         -Username "myuser"
 #>
