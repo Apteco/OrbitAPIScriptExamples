@@ -134,9 +134,6 @@ Complete scripts that combine several of the scripts above. Run them from the `P
 | [ModifyAllUserDashboards.ps1](Powershell/Workflows/ModifyAllUserDashboards.ps1) | Replaces a text value in every dashboard that belongs to the current user. |
 | [SetDashboardTheme.ps1](Powershell/Workflows/SetDashboardTheme.ps1) | Applies a named dashboard theme to a dashboard. |
 
-## Adding a script
+## Contributing
 
-1. Write the script with comment-based help at the top: `.SYNOPSIS` (a one-line summary), `.DESCRIPTION`, a `.PARAMETER` for each parameter, and at least one `.EXAMPLE`.
-2. Add it to the tables above.
-3. If it combines other scripts, put it in `Powershell/Workflows` and add a walkthrough to [docs/walkthroughs](docs/walkthroughs/README.md).
-4. Add an entry for it to [registry.yaml](registry.yaml). The Apteco Help Hub builds a page for each script in the registry, using the script's comment-based help for the content.
+New scripts and walkthroughs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add one.
