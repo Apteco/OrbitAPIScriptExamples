@@ -160,7 +160,7 @@ scripts:
     title: List dashboard themes
     script: Powershell/DashboardThemes/ListDashboardThemes.ps1
     authors: [csuhj]
-    tags: [Dashboard themes]
+    tags: [Dashboards, Dashboard themes]
     kind: single-step
     api: Orbit API
 
@@ -168,7 +168,7 @@ scripts:
     title: Get a dashboard theme
     script: Powershell/DashboardThemes/GetDashboardTheme.ps1
     authors: [csuhj]
-    tags: [Dashboard themes]
+    tags: [Dashboards, Dashboard themes]
     kind: single-step
     api: Orbit API
 
@@ -176,7 +176,7 @@ scripts:
     title: Create a dashboard theme
     script: Powershell/DashboardThemes/CreateDashboardTheme.ps1
     authors: [csuhj]
-    tags: [Dashboard themes]
+    tags: [Dashboards, Dashboard themes]
     kind: single-step
     api: Orbit API
     role: OrbitAdmin
@@ -185,7 +185,7 @@ scripts:
     title: Update a dashboard theme
     script: Powershell/DashboardThemes/UpdateDashboardTheme.ps1
     authors: [csuhj]
-    tags: [Dashboard themes]
+    tags: [Dashboards, Dashboard themes]
     kind: single-step
     api: Orbit API
     role: OrbitAdmin
@@ -195,7 +195,7 @@ scripts:
     script: Powershell/Workflows/SetDashboardTheme.ps1
     walkthrough: docs/walkthroughs/set-dashboard-theme.md
     authors: [csuhj]
-    tags: [Dashboard themes]
+    tags: [Dashboards, Dashboard themes]
     kind: multi-step
     api: Orbit API
 

@@ -94,7 +94,7 @@ Each script has documentation at the top of the script. Each script is also stan
 
 ---
 
-### Dashboard Themes  *(Orbit API)*
+### Dashboard themes  *(Orbit API)*
 
 #### Simple single-step scripts
 
@@ -107,7 +107,7 @@ Each script has documentation at the top of the script. Each script is also stan
 
 ---
 
-### Table Definitions  *(Connect API)*
+### Table definitions  *(Connect API)*
 
 #### Simple single-step scripts
 

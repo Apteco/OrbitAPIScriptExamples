@@ -6,12 +6,12 @@ The **Apteco Orbit API** provides programmatic access to the Orbit platform. It 
 - **Swagger specification:** If the OrbitAPI base URL is `https://example.com/OrbitAPI`, then the swagger specification JSON document will be available at `https://example.com/OrbitAPI/swagger/v2/swagger.json`
 - **Authentication:** Session-based using a Bearer token. Tokens can be obtained via the `Sessions` endpoints.
 
-## Key Principles and Patterns
+## Key principles and patterns
 
 There are some key ideas and shared patterns used across the API:
 
-- **Data Views** - Most resources are grouped into Data Views, and so a `{dataViewName}` is often required as part of the API endpoint URL.
-- **Systems** - A Data View can contain one or more systems and many endpoints require the system name to be specified as well as the Data View.
+- **Data Views**: Most resources are grouped into Data Views, and so a `{dataViewName}` is often required as part of the API endpoint URL.
+- **Systems**: A Data View can contain one or more systems and many endpoints require the system name to be specified as well as the Data View.
 - **Async job pattern**: long-running operations follow a consistent three-step pattern:
   1. `POST .../XxxJobs`: submit the job and receive a `jobId`.
   2. `GET .../XxxJobs/{jobId}`: poll for status and results.
@@ -19,16 +19,18 @@ There are some key ideas and shared patterns used across the API:
   
   Some operations also offer a synchronous variant (`POST .../XxxSync`) that blocks until complete, accepting a `timeoutInSeconds` query parameter.
 - **OrbitAdmin role**: admin-scoped list and write endpoints (for example, listing all audiences across the DataView, managing themes, channels, and settings) require the `OrbitAdmin` role.
-- **Filtering, paging and sorting** - Many endpoints that return a list of resources can be filtered, paged and sorted in a consistent way:
-  - **filter** - Specify a `filter` query string parameter to specify a filter expression. This will be of the form `field eq "value"` or `(a < 123) and (b > 456)`. Each endpoint will have a different set of fields that can be filtered on, documented in the endpoint's Swagger description.
-  - **offset** and **count** - Specifying an `offset` query string parameter will allow you to skip the first n results. In combination with a `count` query string parameter (which sets the maximum number of results to return) this allows you to define a page of results. For example, if you had 25 results to show and you wanted to show these as pages of 10 you could show the first page with a query string of `?offset=0&count=10`, the second page with `?offset=10&count=10` and the last page (with only 5 results) as `?offset=20&count=10`.
-  - `orderBy` - Specify an `orderBy` query string parameter to sort by the values for one field (again from the list of fields documented in the endpoint's Swagger description). To sort ascending, use the field's name (for example `?orderBy=Username`). To sort descending, add a minus sign to the front of the field's name (for example `?orderBy=-Username`).
+- **Filtering, paging and sorting**: Many endpoints that return a list of resources can be filtered, paged and sorted in a consistent way:
+  - **filter**: Specify a `filter` query string parameter to specify a filter expression. This will be of the form `field eq "value"` or `(a < 123) and (b > 456)`. Each endpoint will have a different set of fields that can be filtered on, documented in the endpoint's Swagger description.
+  - **offset** and **count**: Specifying an `offset` query string parameter will allow you to skip the first n results. In combination with a `count` query string parameter (which sets the maximum number of results to return) this allows you to define a page of results. For example, if you had 25 results to show and you wanted to show these as pages of 10 you could show the first page with a query string of `?offset=0&count=10`, the second page with `?offset=10&count=10` and the last page (with only 5 results) as `?offset=20&count=10`.
+  - `orderBy`: Specify an `orderBy` query string parameter to sort by the values for one field (again from the list of fields documented in the endpoint's Swagger description). To sort ascending, use the field's name (for example `?orderBy=Username`). To sort descending, add a minus sign to the front of the field's name (for example `?orderBy=-Username`).
 
   An example of filtering, paging and sorting when listing all Users in the "holidays" DataView might use a GET request to the URL: `https://example.com/OrbitAPI/holidays/Users?filter=LastAccessDate%20gt%20'2026-01-01'&offset=0&count=10&orderBy=Surname`
 
 ## Significant endpoints
 
-Each of the endpoints in the Orbit API has a function and use-case, but some of the more widely applicable endpoints fall into the following categories: 
+The tables below are a selection. For every endpoint, with its parameters and responses, see the Swagger page on your installation (see **Swagger specification** above).
+
+Each of the endpoints in the Orbit API has a function and use-case, but some of the more widely applicable endpoints fall into the following categories:
 
 - Sessions
 - Users
@@ -228,7 +230,7 @@ A series of endpoints that allow for retrieving and modifying information about 
 | `GET`    | `/Shares/{shareId}/Updates/{shareUpdateId}/RemovedUsers` | List users removed in a specific share update |
 
 
-### FastStats System
+### FastStats system
 
 A series of endpoints that allow for getting metadata about the tables and variables in each FastStats system contained within each Data View
 

@@ -12,11 +12,11 @@ You need:
 
 Some scripts, including all the Connect scripts, also need the OrbitAdmin role.
 
-## 1. Get the scripts
+## Get the scripts
 
 Most scripts are standalone. To use one, download just that file, plus `Login.ps1` to get an access token.
 
-The scripts in `Powershell/Workflows` combine other scripts, so they need the whole `Powershell` folder. To get everything, clone this repository, or select **Code > Download ZIP** on GitHub.
+The scripts in `Powershell/Workflows` combine other scripts, so they need the whole `Powershell` folder. To get everything, clone the [OrbitAPIScriptExamples repository](https://github.com/Apteco/OrbitAPIScriptExamples), or select **Code > Download ZIP** on GitHub.
 
 If Windows blocks the scripts because they came from the internet, unblock them:
 
@@ -24,7 +24,7 @@ If Windows blocks the scripts because they came from the internet, unblock them:
 Get-ChildItem -Recurse -Filter *.ps1 | Unblock-File
 ```
 
-## 2. Find your API URLs
+## Find your API URLs
 
 Orbit has separate APIs, each with its own base URL. One access token from `Login.ps1` works with all of them.
 
@@ -36,13 +36,13 @@ Orbit has separate APIs, each with its own base URL. One access token from `Logi
 
 Pass the right base URL to each script, usually with its `-BaseUrl` parameter. The scripts add the DataView name and endpoint path themselves.
 
-## 3. Open the API reference
+## Open the API reference
 
 Add `/swagger/ui` to your Orbit API URL (for example `https://example.com/OrbitAPI/swagger/ui`) to browse every endpoint.
 
 The page links to the API's JSON definition, at `/swagger/v2/swagger.json`. AI tools can use it to help you write new scripts. See [AI prompt ideas](ai-prompt-ideas.md).
 
-## 4. Log in
+## Log in
 
 `Login.ps1` prompts for your password and outputs an access token. Keep it in a variable:
 
@@ -55,7 +55,7 @@ Enter password: *******
 
 If your user has multi-factor authentication (MFA) turned on, the script then asks for the 6-digit code from your authenticator app. The code changes every 30 seconds, so scripts can't log in as that user unattended.
 
-## 5. Make your first call
+## Make your first call
 
 Pass the token to another script with `-AccessToken`. For example, list the dashboards you own:
 
@@ -75,7 +75,7 @@ To check that the APIs are running and can reach their databases and services, r
 Anyone with your password or access token has the same access to Orbit as you.
 
 - Let `Login.ps1` ask for your password rather than passing it with `-Password`. PowerShell can save the commands you type to a history file, password included.
-- Keep the access token in a variable, as in step 4. Without one, `Login.ps1` prints the token on screen. Don't paste it into script files, shared documents, or AI tools.
+- Keep the access token in a variable, as in [Log in](#log-in). Without one, `Login.ps1` prints the token on screen. Don't paste it into script files, shared documents, or AI tools.
 - Use `https://` base URLs only. Over `http://`, your password and token are sent unencrypted.
 - Log in as a user with only the access a script needs. Keep OrbitAdmin users for the scripts that need that role.
 
