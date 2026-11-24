@@ -6,7 +6,7 @@ This guide takes you from getting the scripts to your first successful call to t
 
 You need:
 
-- PowerShell 4 or later
+- PowerShell 4 or later. The scripts were developed on Windows and haven't been tested on macOS or Linux.
 - An Orbit installation running Orbit API 2.3.10 or later
 - An Orbit username and password for the DataView you want to work with
 
