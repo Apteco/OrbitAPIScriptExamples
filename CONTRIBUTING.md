@@ -6,9 +6,7 @@ Have a question, or an idea you'd like to talk through first? [Open an issue](ht
 
 ## Get a copy to work on
 
-If you work at Apteco, clone the repository and create a branch for your change.
-
-If you don't, [fork the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo), which gives you your own copy on GitHub, and make your change on a branch there. You can either:
+[Fork the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo), which gives you your own copy on GitHub, and make your change on a branch there. You can either:
 
 - clone your fork and work on your own computer, or
 - work in your browser on GitHub, without installing anything. In your fork, select **Add file** to add a script, or open a file and select the pencil icon to edit it.
@@ -38,7 +36,7 @@ Run the script against a test system, not a live one, and check that its `.EXAMP
 
 ## Open a pull request
 
-Open a pull request into `main`. If you worked in a fork, see [creating a pull request from a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
+[Open a pull request from your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) into `main`.
 
 Keep each pull request to one script or walkthrough, and in its description say:
 
